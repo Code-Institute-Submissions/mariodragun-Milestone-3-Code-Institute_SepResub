@@ -3,8 +3,9 @@ import os
 from flask_admin.base import Admin
 from flask_admin.contrib.mongoengine.view import ModelView
 from wtforms import Form, StringField, PasswordField, validators
-from flask import request, redirect, render_template, flash, url_for
-from werkzeug.security import generate_password_hash
+from flask import request, redirect, render_template, flash, url_for, session
+from werkzeug.security import generate_password_hash, check_password_hash
+
 
 from flask.json import jsonify
 
@@ -149,3 +150,25 @@ def register():
         return jsonify({"registration": "done"})
     else:
         return render_template("register.html", form=form)
+
+        @app.route("/login/", methods=["GET", "POST"])
+def login():
+    form = LoginForm(request.form)
+
+    if request.method == "POST" and form.validate():
+        # this returns List and we need only one object and that is why .first() is required
+        user = User.objects(username=form.username.data).first()
+        # if user exists
+        if user:
+            if check_password_hash(user.password, form.password.data):
+                # add user data in session
+                session["logged_in"] = True
+                session["username"] = user.username
+                return jsonify({"data": "User is logged in"})
+            else:
+                # Incorrect credentials - reload login and present form
+                flash("Incorrect credentils", "Danger")
+                return redirect(url_for("login"))
+
+    # present form (on GET)
+    return render_template("login.html", form=form)
