@@ -114,6 +114,18 @@ class RegisterForm(Form):
         validators=[validators.Length(min=10, max=45), validators.DataRequired("Confirm password is required.")],
     )
 
+# login form
+class LoginForm(Form):
+    username = StringField(
+        "Username",
+        validators=[validators.Length(min=10, max=150), validators.DataRequired(message="Username is required")],
+    )
+    password = StringField(
+        "Password",
+        validators=[validators.Length(min=10, max=45), validators.DataRequired(message="Password is required.")],
+    )
+
+
 # defining route for register
 @app.route("/register/", methods=["GET", "POST"])
 def register():
