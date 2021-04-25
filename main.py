@@ -6,6 +6,7 @@ from wtforms import Form, StringField, PasswordField, validators
 from flask import request, redirect, render_template, flash, url_for
 from werkzeug.security import generate_password_hash
 
+from flask.json import jsonify
 
 
 from flask_mongoengine import MongoEngine
@@ -112,3 +113,27 @@ class RegisterForm(Form):
         "Confirm Password",
         validators=[validators.Length(min=10, max=45), validators.DataRequired("Confirm password is required.")],
     )
+
+# defining route for register
+@app.route("/register/", methods=["GET", "POST"])
+def register():
+    #  init Registration form and add request.form data to it
+    form = RegisterForm(request.form)
+    #  at the POST request chck if the form is valid (if the initial validation is passed)
+    if request.method == "POST" and form.validate():
+        #  create a new user based on the form data, and also generate password hash
+        # to store password as a hash instead of a plain string
+        new_user = User(
+            first_name=form.first_name.data,
+            last_name=form.last_name.data,
+            username=form.username.data,
+            email=form.email.data,
+            password=generate_password_hash(form.password.data, method="sha256"),
+        )
+        # save new user
+        new_user.save()
+        flash("Successfully registered", "success")
+        # return success message that registration is done
+        return jsonify({"registration": "done"})
+    else:
+        return render_template("register.html", form=form)
