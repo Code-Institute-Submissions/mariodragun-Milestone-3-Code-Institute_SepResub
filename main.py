@@ -1,5 +1,9 @@
 from flask import Flask
 import os
+from flask_admin.base import Admin
+from flask_admin.contrib.mongoengine.view import ModelView
+
+
 
 from flask_mongoengine import MongoEngine
 import mongoengine as me
@@ -59,3 +63,18 @@ class Question(me.Document):
     # standard datetime field which will be updated every time Question is modified
     # and that is why the default value datetime.datetime.now which is the now date/time (server time)
     date_modified = me.DateTimeField(default=datetime.datetime.now)
+
+# init admin class
+admin = Admin(app, name="Quiz", template_mode="bootstrap3")
+
+# defining User Admin View which we will use on the Admin site of the Flask app
+class UserAdminView(ModelView):
+    column_filters = ["username", "email"]
+
+# defining QuestionAdminView which we will use
+class QuestionsAdminView(ModelView):
+    column_filters = ["title"]
+
+# connecting User and Question models with Admin
+admin.add_view(UserAdminView(User))
+admin.add_view(QuestionsAdminView(Question))
