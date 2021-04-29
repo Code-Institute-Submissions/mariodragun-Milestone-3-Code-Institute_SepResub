@@ -15,7 +15,8 @@ import mongoengine as me
 import datetime
 
 # init flask app
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static", static_url_path="/assets")
+
 
 # adding configuration
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
