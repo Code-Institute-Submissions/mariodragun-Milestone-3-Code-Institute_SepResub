@@ -177,3 +177,8 @@ def login():
 @app.route("/", methods=["GET"]) 
 def index():
     return render_template("index.html")
+
+@app.route("/quiz/", methods=["GET", "POST"])
+def quiz():
+    return render_template("quiz.html")
+   
