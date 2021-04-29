@@ -172,3 +172,7 @@ def login():
 
     # present form (on GET)
     return render_template("login.html", form=form)
+
+@app.route("/", methods=["GET"]) 
+def index():
+    return render_template("index.html")
