@@ -1,0 +1,43 @@
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+ *{
+    margin: 0.333em;
+    padding:0;
+    border:0;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    color:#36454F;
+    background-color: yellow;
+	display: flex;
+	flex-direction: column;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.navigationbar{
+    font-size: 130%;
+    list-style-type: none;
+    letter-spacing: 0.1875em;
+
+}
+.navigationbar li {
+    float: right;
+    margin-right: 1.875em;
+	flex-direction: row-reverse; 
+}
+
+.navigationbar a {
+    text-decoration: none;
+    color:#36454F;
+}
+.navigationbar a:hover {
+    color:red;
+}
+
+.photo_main{                             /* First photo on home page, just under navigation bar*/
+   margin-top: 0.938em;
+    height: 12.5em;
+    width: 100%;
+}
