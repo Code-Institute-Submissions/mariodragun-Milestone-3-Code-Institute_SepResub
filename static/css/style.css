@@ -1,43 +1,38 @@
- @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-
- *{
-    margin: 0.333em;
-    padding:0;
-    border:0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 body{
     font-family: 'Roboto', sans-serif;
-    color:#36454F;
-    background-color: yellow;
-	display: flex;
-	flex-direction: column;
-    font-size: 1em;
-    line-height: 1.6;
 }
 
-.navigationbar{
-    font-size: 130%;
-    list-style-type: none;
-    letter-spacing: 0.1875em;
-
-}
-.navigationbar li {
-    float: right;
-    margin-right: 1.875em;
-	flex-direction: row-reverse; 
+/* background color to the navigation */
+.navigationbar {
+  background-color: #333;
+  overflow: hidden;
 }
 
+/* adding style to links in navigation bar*/
 .navigationbar a {
-    text-decoration: none;
-    color:#36454F;
-}
-.navigationbar a:hover {
-    color:red;
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
-.photo_main{                             /* First photo on home page, just under navigation bar*/
-   margin-top: 0.938em;
-    height: 12.5em;
-    width: 100%;
+/* highlight  links on hover */
+.navigationbar a:hover {
+  background-color: red;
+  color: black;
 }
+
+.photo_main{
+	width: 100%;
+	height: 100%;
+}
+						/* Iphone 5 */
+@media screen and (max-height: 568px) and (max-width : 320px) and (orientation: portrait) {
+}
+
+@media screen and (max-height: 568px) and (max-width : 320px) and (orientation: landscape) {
+	/* same changes but on horizontal orientation */
