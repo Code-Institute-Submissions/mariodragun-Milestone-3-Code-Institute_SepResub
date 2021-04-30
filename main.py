@@ -183,7 +183,3 @@ def quiz():
     return render_template("quiz.html")
 
     
-@app.route("/quiz/", methods=["GET", "POST"])
-def quiz():
-    question = Question.objects.all().first()
-    return render_template("quiz.html", question=question)
