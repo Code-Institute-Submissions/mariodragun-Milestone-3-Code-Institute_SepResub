@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 body{
     font-family: 'Roboto', sans-serif;
 }
+
 
 /* background color to the navigation */
 .navigationbar {
@@ -30,9 +31,3 @@ body{
 	width: 100%;
 	height: 100%;
 }
-						/* Iphone 5 */
-@media screen and (max-height: 568px) and (max-width : 320px) and (orientation: portrait) {
-}
-
-@media screen and (max-height: 568px) and (max-width : 320px) and (orientation: landscape) {
-	/* same changes but on horizontal orientation */
