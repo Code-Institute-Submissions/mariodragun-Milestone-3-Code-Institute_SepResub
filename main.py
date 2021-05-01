@@ -117,14 +117,23 @@ class UserAdminView(ModelView):
 class QuestionsAdminView(ModelView):
     column_filters = ["title"]
 
+class QuizTakenAdminView(ModelView):
+    column_filter = ["user"]
+
+
 # connecting User and Question models with Admin
 admin.add_view(UserAdminView(User))
 admin.add_view(QuestionsAdminView(Question))
+admin.add_view(QuizTakenAdminView(QuizTaken))
+
+
 
 # registration form
 class RegisterForm(Form):
-    first_name = StringField("First name", validators=[validators.Length(max=50)])
-    last_name = StringField("Last name", validators=[validators.Length(max=75)])
+    first_name = StringField(
+        "First name", validators=[validators.Length(max=50)])
+    last_name = StringField(
+        "Last name", validators=[validators.Length(max=75)])
     email = StringField(
         "Email",
         validators=[
