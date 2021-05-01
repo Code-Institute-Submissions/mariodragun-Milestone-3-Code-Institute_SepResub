@@ -56,6 +56,7 @@ class Answer(me.EmbeddedDocument):
     date_modified = me.DateTimeField(default=datetime.datetime.now)
 
 
+
 class Question(me.Document):
     # stanard question text title
     title = me.StringField(required=True, unique=True)
@@ -69,6 +70,41 @@ class Question(me.Document):
     # standard datetime field which will be updated every time Question is modified
     # and that is why the default value datetime.datetime.now which is the now date/time (server time)
     date_modified = me.DateTimeField(default=datetime.datetime.now)
+
+# Embeded model for QuizTaken - holds questions and chosen answers
+class QuestionsAnswered(me.EmbeddedDocument):
+    question = me.ReferenceField(Question)
+    chosen_answer = me.StringField()
+    is_correct = me.BooleanField(default=False)
+
+    def __repr__(self):
+        return f"Question: {self.question.title}, correct: {self.is_correct}"
+
+    def __str__(self):
+        return f"Question: {self.question.title}, correct: {self.is_correct}"
+
+class QuizTaken(me.Document):
+    user = me.ReferenceField(User)
+    list_of_questions = me.ListField(me.EmbeddedDocumentField(QuestionsAnswered))
+    number_of_questions = me.IntField()
+    correct_answers = me.IntField(default=0)
+
+    is_done = me.BooleanField(default=False)
+
+    date_started = me.DateTimeField()
+    date_modified = me.DateTimeField(default=datetime.datetime.now)
+
+    @property
+    def overall_score(self):
+        return f"{self.correct_answers}/{self.number_of_questions}"
+
+    def __repr__(self):
+        return f"User: {self.user}"
+
+    def __str__(self):
+        return f"User: {self.user}"
+
+
 
 # init admin class
 admin = Admin(app, name="Quiz", template_mode="bootstrap3")
