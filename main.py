@@ -125,7 +125,7 @@ class QuizTakenAdminView(ModelView):
 admin.add_view(UserAdminView(User))
 admin.add_view(QuestionsAdminView(Question))
 admin.add_view(QuizTakenAdminView(QuizTaken))
-# helepr functions
+# helper functions
 # create/set user questions
 def create_user_quiz():
     # get all questions
@@ -158,6 +158,25 @@ def create_user_quiz():
     quiz_taken.save()
 
     return quiz_taken
+
+def set_users_questions(existing_quiz):
+    if existing_quiz:
+        still_has_unaswered = False
+        for q_answerd in existing_quiz.list_of_questions:
+            if not q_answerd.chosen_answer:
+                still_has_unaswered = True
+                return q_answerd.question
+
+        if not still_has_unaswered:
+            existing_quiz.is_done = True
+            existing_quiz.save()
+            return None
+
+        return existing_quiz.list_of_questions[0]["question"]
+
+    quiz_taken = create_user_quiz()
+
+    return quiz_taken.list_of_questions[0]["question"]
 
 # registration form
 class RegisterForm(Form):
@@ -300,3 +319,57 @@ def quiz():
         user=g.user, users_quizes=all_users_quizes, 
         last_unfinished_quiz=last_unfinished_quiz
     )
+
+# create quiz route with `quiz_id`
+@app.route("/quiz/<quiz_id>", methods=["GET", "POST"])
+def quiz_start(quiz_id):
+    """View to start a quiz"""
+
+    #  if not user in global object - redirect to login
+    if not g.user:
+        return redirect(url_for("login"))
+
+    # get the existing quiz object form the user - based on the quiz_id
+    existing_quiz = QuizTaken.objects(user=g.user, id=quiz_id).first()
+    # if exsting quiz is done redirect to quiz end
+    if existing_quiz.is_done:
+        return redirect(url_for("quiz_end", quiz_id=quiz_id))
+
+    if request.method == "POST":
+        question_id = request.form.get("q")
+        supplied_answer = request.form.getlist("q_answers")[0]
+
+        users_quiz = existing_quiz
+        users_quiz__list_of_questions = users_quiz.list_of_questions
+        for list_of_q in users_quiz__list_of_questions:
+
+            # find question which corresponds with the id 
+            # supplied from the form
+            if str(list_of_q.question.id) == str(question_id):
+                # assing that question to be our question
+                question = list_of_q.question
+                correct_answer = None
+                # iter through questions answers
+                for answer in question.answers:
+                    if answer.is_correct:
+                        correct_answer = answer
+
+                list_of_q.chosen_answer = supplied_answer
+
+                #  check if supplied answer is the correct one
+                if correct_answer.answer == supplied_answer:
+                    list_of_q.is_correct = True
+                    users_quiz.correct_answers = int(
+                        users_quiz.correct_answers) + 1
+
+        # update quiz object
+        users_quiz.save()
+
+        return redirect(url_for("quiz_start", quiz_id=quiz_id))
+
+    else:
+        question = set_users_questions(existing_quiz=existing_quiz)
+        if question is None:
+            return redirect(url_for("quiz_end", quiz_id=quiz_id))
+
+        return render_template("quiz.html", question=question, quiz_id=quiz_id)
