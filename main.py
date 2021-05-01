@@ -269,8 +269,34 @@ def login():
 def index():
     return render_template("index.html")
 
+   
 @app.route("/quiz/", methods=["GET", "POST"])
 def quiz():
-    return render_template("quiz.html")
+    # see if user is in global object - if not redirect to login
+    if not g.user:
+        return redirect(url_for("login"))
 
-    
+    # this is overall quiz with user history
+    all_users_quizes = QuizTaken.objects(user=g.user)
+
+    if request.method == "POST":
+        quiz_id = request.form.get("quiz")
+        # if no quiz_id, create a new quiz and redirect to quiz start
+        if quiz_id is None or quiz_id == "0":
+            #  create user quiz via helper function
+            user_quiz = create_user_quiz()
+            return redirect(url_for("quiz_start", quiz_id=user_quiz.id))
+
+        #  open specific quiz with the specific ID
+        return redirect(url_for("quiz_start", quiz_id=quiz_id))
+
+    # get last unfinished quiz - to connect it with  a submit option 
+    # `Continue` in template
+    last_unfinished_quiz = all_users_quizes.filter(is_done=False).first()
+
+    # display all of the previous users quizes
+    return render_template(
+        "quiz_overview.html", 
+        user=g.user, users_quizes=all_users_quizes, 
+        last_unfinished_quiz=last_unfinished_quiz
+    )
