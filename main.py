@@ -248,7 +248,7 @@ def before_request():
 def register():
     #  init Registration form and add request.form data to it
     form = RegisterForm(request.form)
-    #  at the POST request chck if the form is valid 
+    # at the POST request chck if the form is valid
     # (if the initial validation is passed)
     if request.method == "POST" and form.validate():
         #  create a new user based on the form data, 
@@ -260,7 +260,7 @@ def register():
             username=form.username.data,
             email=form.email.data,
             password=generate_password_hash(
-                orm.password.data, method="sha256"),
+                form.password.data, method="sha256"),
         )
         # save new user
         new_user.save()
@@ -284,7 +284,9 @@ def login():
                 # add user data in session
                 session["logged_in"] = True
                 session["username"] = user.username
-                return jsonify({"data": "User is logged in"})
+                user_id = user.id
+                session["user_id"] = str(user_id)
+                return redirect(url_for("quiz"))
             else:
                 # Incorrect credentials - reload login and present form
                 flash("Incorrect credentils", "Danger")
