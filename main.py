@@ -3,7 +3,7 @@ import os
 from flask_admin.base import Admin
 from flask_admin.contrib.mongoengine.view import ModelView
 from wtforms import Form, StringField, PasswordField, validators
-from flask import request, redirect, render_template, flash, url_for, session
+from flask import request, redirect, render_template, flash, url_for, session,g
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
@@ -233,6 +233,15 @@ class LoginForm(Form):
             validators.DataRequired(message="Password is required.")],
     )
 
+@app.before_request
+def before_request():
+    g.user = None                    
+    
+    # getting user object every request
+    if "user_id" in session:
+        user = User.objects(id=session["user_id"]).first()
+        g.user = user
+
 
 # defining route for register
 @app.route("/register/", methods=["GET", "POST"])
@@ -373,3 +382,15 @@ def quiz_start(quiz_id):
             return redirect(url_for("quiz_end", quiz_id=quiz_id))
 
         return render_template("quiz.html", question=question, quiz_id=quiz_id)
+
+@app.route("/quiz/<quiz_id>/completed", methods=["GET"])
+def quiz_end(quiz_id):
+    if not g.user:
+        return redirect(url_for("login"))
+
+    existing_quiz = QuizTaken.objects(user=g.user, id=quiz_id).first()
+    if not existing_quiz.is_done:
+        return redirect(url_for("quiz_start", quiz_id=quiz_id))
+
+    return render_template(
+        "quiz_completed.html", user=g.user, score=existing_quiz.overall_score)
