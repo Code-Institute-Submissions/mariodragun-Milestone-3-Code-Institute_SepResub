@@ -1,6 +1,8 @@
 
 # Ouiz -  Milestone project 3 Code Institute
 
+
+
 ## Summary
 
  #### The purpose of the project is to build a full-stack site where user can 
@@ -17,35 +19,41 @@
 #### password, confirm password and register button
 #### - Admin page contains sections: home, user, questions, quiz taken
 
-### Structure and design: 
+
+
+## Structure and design: 
 
 ### Fonts:
+
 #### For projects was used font Roboto from Google Fonts
 
 ### Colors:
+
 #### - Dark grey color was used for navigation bar to fit with image on home page
 #### - Red color was chosen for hover element above of navigation bar
 
-### Wireframes:
+
+## Wireframes:
 
 #### - [Home page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/wireframes/Home%20page%20wireframe.JPG)
 #### - [Login Page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/wireframes/login%20page%20wireframe.JPG)
-#### - [Register Page(https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/wireframes/register%20page%20wireframe.JPG)
+#### - [Register Page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/wireframes/register%20page%20wireframe.JPG)
 #### - [Admin](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/wireframes/admin%20page%20wireframe.JPG)
 
-### UX stories
+
+## UX stories
  
- #### As Admin I want to:
+ ### As Admin I want to:
  #### - easy access change database questions and new one, and to delete user
  
-
- #### As User I want to:
+ ### As User I want to:
  #### - easy to register
  #### - easy to login
  #### - to play general knowledge quiz
  #### - and to track my previous score
 
- ### Technology used:
+
+ ## Technology used:
 
  #### - HTML5
  #### - CSS
@@ -54,7 +62,8 @@
  #### - Flask
  #### 
 
- ### Tools used:
+
+ ## Tools used:
 
 #### - Visual code studio
 #### - Git pod
@@ -66,6 +75,7 @@
 #### - [PEP8 online Validator](http://pep8online.com/) to validate 
 #### - Python code
 #### - Moquaps used to make wireframes
+
 
 #### Code Validation:
 #### - HTML code was validated using W3C Markup Validation Service, no errors found
