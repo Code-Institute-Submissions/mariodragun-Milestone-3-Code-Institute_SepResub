@@ -28,20 +28,20 @@
 
 ### Wireframes:
 
-#### - Home page[]()
-#### - Login Page[]()
-#### - Register Page[]()
-#### - Admin[]()
+#### - Home page[](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/wireframes/Home%20page%20wireframe.JPG)
+#### - Login Page[](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/wireframes/login%20page%20wireframe.JPG)
+#### - Register Page[](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/wireframes/register%20page%20wireframe.JPG)
+#### - Admin[](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/wireframes/admin%20page%20wireframe.JPG)
 
 ### UX stories
  
  #### As Admin I want to:
- #### - easy acces change database questions and new one, and to delete user
+ #### - easy access change database questions and new one, and to delete user
  
 
  #### As User I want to:
  #### - easy register
- #### - eeasy login
+ #### - easy login
  #### - to play general knowledge quiz
  #### - and to track my previous score
 
