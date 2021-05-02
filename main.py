@@ -3,8 +3,7 @@ import os
 from flask_admin.base import Admin
 from flask_admin.contrib.mongoengine.view import ModelView
 from wtforms import Form, StringField, PasswordField, validators
-from flask import request,
-redirect, render_template, flash, url_for, session, g
+from flask import request, redirect, render_template, flash, url_for, session,g
 from werkzeug.security import generate_password_hash, check_password_hash
 import random
 
@@ -30,21 +29,21 @@ db = MongoEngine()
 db.init_app(app)
 
 
-# DB Models
+#### DB Models
 # define db models to create collections in MongoDB
 # define basic User Model - to register/login or use User information
 # use me as mongoengine alias. And for each field define what type it is.
 class User(me.Document):
     first_name = me.StringField(required=True)
     last_name = me.StringField(required=True)
-    # username is set to be unique to prevent multiple users to have same
+    #  username is set to be unique to prevent multiple users to have same 
     # username
     username = me.StringField(required=True, unique=True)
     # email is set to be unique to prevent multiple users to have same email
     email = me.EmailField(required=True, unique=True)
-    # password is set to be a plain text field - because we will use
+    # password is set to be a plain text field - because we will use 
     # generate_password_hash so
-    # there is no need to hash it again
+    #  there is no need to hash it again
     password = me.StringField(max_length=256)
 
 
@@ -55,9 +54,9 @@ class Answer(me.EmbeddedDocument):
     # is correct boolean, will signify if the answer is correct or not
     is_correct = me.BooleanField(default=False)
 
-    # standard datetime field which will be updated every time Question is
+    # standard datetime field which will be updated every time Question is 
     # modified
-    # and that is why the default value datetime.datetime.now which is the now
+    # and that is why the default value datetime.datetime.now which is the now 
     # date/time (server time)
     date_modified = me.DateTimeField(default=datetime.datetime.now)
 
@@ -141,8 +140,8 @@ def create_user_quiz():
 
     list_of_questions_generated_list = list()
     quiz_taken_number_of_questions_dict = {}
-    # for all randomized id's get Question object is
-    # # store it in a list_of_questions_generated_list
+    # for all randomized id's get Question object and
+    # store it in a list_of_questions_generated_list
     for question_id in all_questions_id_list_random:
         question = all_questions.filter(id=question_id).first()
         quiz_taken_number_of_questions_dict = {"question": question}
@@ -209,7 +208,7 @@ class RegisterForm(Form):
             validators.Length(min=10, max=45),
             validators.DataRequired(message="Password is required"),
             validators.EqualTo(
-                fieldname="confirm_password",
+                fieldname="confirm_password", 
                 message="Entered passwords do not match"),
         ],
     )
@@ -238,7 +237,7 @@ class LoginForm(Form):
 @app.before_request
 def before_request():
     g.user = None                    
-
+    
     # getting user object every request
     if "user_id" in session:
         user = User.objects(id=session["user_id"]).first()
@@ -322,8 +321,8 @@ def quiz():
         #  open specific quiz with the specific ID
         return redirect(url_for("quiz_start", quiz_id=quiz_id))
 
-    # get last unfinished quiz - to connect it with  a submit option
-    # `Continue` in template
+    # get last unfinished quiz - to connect it with a submit option
+    # Continue` in template
     last_unfinished_quiz = all_users_quizes.filter(is_done=False).first()
 
     # display all of the previous users quizes
