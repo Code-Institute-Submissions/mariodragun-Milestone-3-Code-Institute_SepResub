@@ -28,10 +28,10 @@
 
 ### Wireframes:
 
-#### - Home page[](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/wireframes/Home%20page%20wireframe.JPG)
-#### - Login Page[](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/wireframes/login%20page%20wireframe.JPG)
-#### - Register Page[](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/wireframes/register%20page%20wireframe.JPG)
-#### - Admin[](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/wireframes/admin%20page%20wireframe.JPG)
+#### - [Home page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/wireframes/Home%20page%20wireframe.JPG)
+#### - [Login Page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/wireframes/login%20page%20wireframe.JPG)
+#### - [Register Page(https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/wireframes/register%20page%20wireframe.JPG)
+#### - [Admin](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/wireframes/admin%20page%20wireframe.JPG)
 
 ### UX stories
  
@@ -40,8 +40,8 @@
  
 
  #### As User I want to:
- #### - easy register
- #### - easy login
+ #### - easy to register
+ #### - easy to login
  #### - to play general knowledge quiz
  #### - and to track my previous score
 
