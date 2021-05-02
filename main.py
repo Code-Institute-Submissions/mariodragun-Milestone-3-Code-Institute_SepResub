@@ -148,7 +148,7 @@ def create_user_quiz():
         quiz_taken_number_of_questions_dict = {"question": question}
         list_of_questions_generated_list.append(
             quiz_taken_number_of_questions_dict)
-            
+    
     # create QuizTaken object with all available information
     quiz_taken = QuizTaken(
         user=g.user,
