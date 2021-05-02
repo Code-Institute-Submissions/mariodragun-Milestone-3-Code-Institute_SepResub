@@ -37,14 +37,14 @@ db.init_app(app)
 class User(me.Document):
     first_name = me.StringField(required=True)
     last_name = me.StringField(required=True)
-    #  username is set to be unique to prevent multiple users to have same 
+    # username is set to be unique to prevent multiple users to have same
     # username
     username = me.StringField(required=True, unique=True)
     # email is set to be unique to prevent multiple users to have same email
     email = me.EmailField(required=True, unique=True)
-    # password is set to be a plain text field - because we will use 
+    # password is set to be a plain text field - because we will use
     # generate_password_hash so
-    #  there is no need to hash it again
+    # there is no need to hash it again
     password = me.StringField(max_length=256)
 
 
@@ -55,9 +55,9 @@ class Answer(me.EmbeddedDocument):
     # is correct boolean, will signify if the answer is correct or not
     is_correct = me.BooleanField(default=False)
 
-    # standard datetime field which will be updated every time Question is 
+    # standard datetime field which will be updated every time Question is
     # modified
-    # and that is why the default value datetime.datetime.now which is the now 
+    # and that is why the default value datetime.datetime.now which is the now
     # date/time (server time)
     date_modified = me.DateTimeField(default=datetime.datetime.now)
 
@@ -66,7 +66,7 @@ class Answer(me.EmbeddedDocument):
 class Question(me.Document):
     # stanard question text title
     title = me.StringField(required=True, unique=True)
-    # help text for the question - additional explanation of the question, not 
+    # help text for the question - additional explanation of the question, not
     # required
     description = me.StringField(default="")
     # url field for the images, also additional explanations of the questions
@@ -74,9 +74,9 @@ class Question(me.Document):
     # embeded document, one question can have many answers (List of answers)
     answers = me.ListField(me.EmbeddedDocumentField(Answer))
 
-    # standard datetime field which will be updated every time Question is 
+    # standard datetime field which will be updated every time Question is
     # modified
-    # and that is why the default value datetime.datetime.now which is the now 
+    # and that is why the default value datetime.datetime.now which is the now
     # date/time (server time)
     date_modified = me.DateTimeField(default=datetime.datetime.now)
 
@@ -141,14 +141,14 @@ def create_user_quiz():
 
     list_of_questions_generated_list = list()
     quiz_taken_number_of_questions_dict = {}
-    # for all randomized id's get Question object and 
-    # store it in a list_of_questions_generated_list
+    # for all randomized id's get Question object is
+    # # store it in a list_of_questions_generated_list
     for question_id in all_questions_id_list_random:
         question = all_questions.filter(id=question_id).first()
         quiz_taken_number_of_questions_dict = {"question": question}
         list_of_questions_generated_list.append(
             quiz_taken_number_of_questions_dict)
-    
+            
     # create QuizTaken object with all available information
     quiz_taken = QuizTaken(
         user=g.user,
@@ -199,9 +199,9 @@ class RegisterForm(Form):
             validators.Length(min=10, max=150),
             validators.DataRequired(message="Username is required.")],
     )
-    # password fields hold few validator as also qualTo which will compare 
+    # password fields hold few validator as also qualTo which will compare
     # value against `confirm_password` field
-    #  in the case that the values are different it will print out the 
+    #  in the case that the values are different it will print out the
     # appropriate message which is set here
     password = PasswordField(
         "Password",
@@ -209,7 +209,7 @@ class RegisterForm(Form):
             validators.Length(min=10, max=45),
             validators.DataRequired(message="Password is required"),
             validators.EqualTo(
-                fieldname="confirm_password", 
+                fieldname="confirm_password",
                 message="Entered passwords do not match"),
         ],
     )
@@ -238,7 +238,7 @@ class LoginForm(Form):
 @app.before_request
 def before_request():
     g.user = None                    
-    
+
     # getting user object every request
     if "user_id" in session:
         user = User.objects(id=session["user_id"]).first()
@@ -253,7 +253,7 @@ def register():
     # at the POST request chck if the form is valid
     # (if the initial validation is passed)
     if request.method == "POST" and form.validate():
-        #  create a new user based on the form data, 
+        #  create a new user based on the form data,
         # and also generate password hash
         # to store password as a hash instead of a plain string
         new_user = User(
@@ -322,14 +322,14 @@ def quiz():
         #  open specific quiz with the specific ID
         return redirect(url_for("quiz_start", quiz_id=quiz_id))
 
-    # get last unfinished quiz - to connect it with  a submit option 
+    # get last unfinished quiz - to connect it with  a submit option
     # `Continue` in template
     last_unfinished_quiz = all_users_quizes.filter(is_done=False).first()
 
     # display all of the previous users quizes
     return render_template(
         "quiz_overview.html", 
-        user=g.user, users_quizes=all_users_quizes, 
+        user=g.user, users_quizes=all_users_quizes,
         last_unfinished_quiz=last_unfinished_quiz
     )
 
@@ -356,7 +356,7 @@ def quiz_start(quiz_id):
         users_quiz__list_of_questions = users_quiz.list_of_questions
         for list_of_q in users_quiz__list_of_questions:
 
-            # find question which corresponds with the id 
+            # find question which corresponds with the id
             # supplied from the form
             if str(list_of_q.question.id) == str(question_id):
                 # assing that question to be our question
