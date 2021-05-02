@@ -59,7 +59,7 @@
 #### - Visual code studio
 #### - Git pod
 #### - Github used for repository hosting service 
-#### - [Herouku](https://www.mongodb.com/) used to deploy web application
+#### - [Herouku](https://dashboard.heroku.com/apps) used to deploy web application
 #### - [MongoDB](https://www.mongodb.com/) used as database storage 
 #### - [W3C Validator](https://validator.w3.org/) used to validite HTML code 
 #### - [W3C CSS Validation Service Jigsaw](https://jigsaw.w3.org/css-validator/) to validate CSS code 
