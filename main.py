@@ -268,7 +268,8 @@ def register():
         flash("Successfully registered", "success")
         # return success message that registration is done
         return render_template("register.html", form=form)
-    
+    else:
+        return render_template("register.html", form=form)
 
 @app.route("/login/", methods=["GET", "POST"])
 def login():
