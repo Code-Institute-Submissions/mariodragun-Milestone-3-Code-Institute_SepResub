@@ -11,7 +11,7 @@
  This site allows user to play short quiz with general knowledge and track 
  his score history
 
-#### Project has the following sections:  
+### Project has the following sections:  
 
 - Home page contains image and navigation bar with access to login, register, admin
 
@@ -150,7 +150,6 @@ Functionality tested:
 [index](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/index%20html%20validator.JPG)
 
 [login](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/login%20html%20validator.JPG)
-
 
 [quiz complete](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/quiz%20complete%20html%20validator.JPG)
 
