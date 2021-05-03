@@ -3,15 +3,15 @@ import os
 from flask_admin.base import Admin
 from flask_admin.contrib.mongoengine.view import ModelView
 from wtforms import Form, StringField, PasswordField, validators
-from flask import request, redirect, render_template, flash, url_for, session, g
+from flask import (
+    request, redirect, render_template, flash, url_for, session, g)
 from werkzeug.security import generate_password_hash, check_password_hash
 import random
-
 from flask.json import jsonify
-
 from flask_mongoengine import MongoEngine
 import mongoengine as me
 import datetime
+
 
 # init flask app
 app = Flask(__name__, static_folder="static", static_url_path="/assets")
@@ -58,6 +58,7 @@ class Answer(me.EmbeddedDocument):
     # date/time (server time)
     date_modified = me.DateTimeField(default=datetime.datetime.now)
 
+
 class Question(me.Document):
     # stanard question text title
     title = me.StringField(required=True, unique=True)
@@ -75,12 +76,12 @@ class Question(me.Document):
     # date/time (server time)
     date_modified = me.DateTimeField(default=datetime.datetime.now)
 
+
 # Embeded model for QuizTaken - holds questions and chosen answers
 class QuestionsAnswered(me.EmbeddedDocument):
     question = me.ReferenceField(Question)
     chosen_answer = me.StringField()
     is_correct = me.BooleanField(default=False)
-
 
 
 class QuizTaken(me.Document):
@@ -99,24 +100,31 @@ class QuizTaken(me.Document):
     def overall_score(self):
         return f"{self.correct_answers}/{self.number_of_questions}"
 
+
 # init admin class
 admin = Admin(app, name="Quiz", template_mode="bootstrap3")
+
 
 # defining User Admin View which we will use on the Admin site of the Flask app
 class UserAdminView(ModelView):
     column_filters = ["username", "email"]
 
+
 # defining QuestionAdminView which we will use
 class QuestionsAdminView(ModelView):
     column_filters = ["title"]
 
+
 class QuizTakenAdminView(ModelView):
     column_filter = ["user"]
+
 
 # connecting User and Question models with Admin
 admin.add_view(UserAdminView(User))
 admin.add_view(QuestionsAdminView(Question))
 admin.add_view(QuizTakenAdminView(QuizTaken))
+
+
 # helper functions
 # create/set user questions
 def create_user_quiz():
@@ -138,7 +146,7 @@ def create_user_quiz():
         quiz_taken_number_of_questions_dict = {"question": question}
         list_of_questions_generated_list.append(
             quiz_taken_number_of_questions_dict)
-    
+
     # create QuizTaken object with all available information
     quiz_taken = QuizTaken(
         user=g.user,
@@ -150,6 +158,7 @@ def create_user_quiz():
     quiz_taken.save()
 
     return quiz_taken
+
 
 def set_users_questions(existing_quiz):
     if existing_quiz:
@@ -169,6 +178,7 @@ def set_users_questions(existing_quiz):
     quiz_taken = create_user_quiz()
 
     return quiz_taken.list_of_questions[0]["question"]
+
 
 # registration form
 class RegisterForm(Form):
@@ -199,7 +209,7 @@ class RegisterForm(Form):
             validators.Length(min=10, max=45),
             validators.DataRequired(message="Password is required"),
             validators.EqualTo(
-                fieldname="confirm_password", 
+                fieldname="confirm_password",
                 message="Entered passwords do not match"),
         ],
     )
@@ -209,6 +219,7 @@ class RegisterForm(Form):
         validators=[validators.Length(min=10, max=45), validators.DataRequired(
             "Confirm password is required.")],
     )
+
 
 # login form
 class LoginForm(Form):
@@ -221,14 +232,15 @@ class LoginForm(Form):
     password = StringField(
         "Password",
         validators=[
-            validators.Length(min=10, max=45), 
+            validators.Length(min=10, max=45),
             validators.DataRequired(message="Password is required.")],
     )
 
+
 @app.before_request
 def before_request():
-    g.user = None                    
-    
+    g.user = None
+
     # getting user object every request
     if "user_id" in session:
         user = User.objects(id=session["user_id"]).first()
@@ -262,6 +274,7 @@ def register():
     else:
         return render_template("register.html", form=form)
 
+
 @app.route("/login/", methods=["GET", "POST"])
 def login():
     form = LoginForm(request.form)
@@ -280,16 +293,18 @@ def login():
                 session["user_id"] = str(user_id)
                 return redirect(url_for("quiz"))
             else:
-                # incorrect credentials - reload login and present form
+                # Incorrect credentials - reload login and present form
                 flash("Incorrect credentils", "Danger")
                 return redirect(url_for("login"))
 
     # present form (on GET)
     return render_template("login.html", form=form)
 
-@app.route("/", methods=["GET"]) 
+
+@app.route("/", methods=["GET"])
 def index():
     return render_template("index.html")
+
 
 @app.route("/quiz/", methods=["GET", "POST"])
 def quiz():
@@ -304,11 +319,11 @@ def quiz():
         quiz_id = request.form.get("quiz")
         # if no quiz_id, create a new quiz and redirect to quiz start
         if quiz_id is None or quiz_id == "0":
-            # create user quiz via helper function
+            #  create user quiz via helper function
             user_quiz = create_user_quiz()
             return redirect(url_for("quiz_start", quiz_id=user_quiz.id))
 
-        # open specific quiz with the specific ID
+        #  open specific quiz with the specific ID
         return redirect(url_for("quiz_start", quiz_id=quiz_id))
 
     # get last unfinished quiz - to connect it with a submit option
@@ -322,12 +337,13 @@ def quiz():
         last_unfinished_quiz=last_unfinished_quiz
     )
 
+
 # create quiz route with `quiz_id`
 @app.route("/quiz/<quiz_id>", methods=["GET", "POST"])
 def quiz_start(quiz_id):
     """View to start a quiz"""
 
-    # if not user in global object - redirect to login
+    #  if not user in global object - redirect to login
     if not g.user:
         return redirect(url_for("login"))
 
@@ -358,7 +374,7 @@ def quiz_start(quiz_id):
 
                 list_of_q.chosen_answer = supplied_answer
 
-                # check if supplied answer is the correct one
+                #  check if supplied answer is the correct one
                 if correct_answer.answer == supplied_answer:
                     list_of_q.is_correct = True
                     users_quiz.correct_answers = int(
@@ -375,6 +391,7 @@ def quiz_start(quiz_id):
             return redirect(url_for("quiz_end", quiz_id=quiz_id))
 
         return render_template("quiz.html", question=question, quiz_id=quiz_id)
+
 
 @app.route("/quiz/<quiz_id>/completed", methods=["GET"])
 def quiz_end(quiz_id):
