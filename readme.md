@@ -3,7 +3,7 @@
 
 
 
-## Summary
+## Summary:
 
  The purpose of the project is to build a full-stack site where user can 
  play quiz, tracked his score and admin can easily modify data base add new 
@@ -36,12 +36,12 @@
 
 - Red color was chosen for hover element above of navigation bar
 
-### Image
+### Images:
 
 - Welcome image was downloaded from [WallpaperAccess](https://wallpaperaccess.com/quiz)
 
 
-## Wireframes:
+### Wireframes:
 
 - [Home page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/wireframes/Home%20page%20wireframe.JPG)
 
@@ -52,7 +52,7 @@
 - [Admin](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/wireframes/admin%20page%20wireframe.JPG)
 
 
-## UX stories
+## UX stories:
  
  ### As admin I want to:
 
@@ -111,9 +111,10 @@
 
 - Moquaps used to make wireframes
 
-#### Testing:
+## Testing:
 
 Application was tested on Chrome and Firefix browsers.
+
 Functionality tested:
 
 - that hover element changing color on navigation bar
@@ -130,7 +131,13 @@ Functionality tested:
 
 - that admin can add new or to remove old questions
 
-#### Code Validation:
+- that password matched
+
+- that password has enough length
+
+- that username has enough lenght
+
+### Code Validation:
 
 - HTML code was validated using W3C Markup Validation Service, no errors found html [html base validator](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/base%20html%20validator.JPG)
 
@@ -155,16 +162,16 @@ Functionality tested:
 
 
 
-#### Deployment:
+## Deployment:
 
 - Project has been deployed at Github and Herouku
 
 
-#### Further Development:
+## Further Development:
 
 - Plans for further development are to add more questions to database, to add more quizzes
 and to add area to show tables with scores.
 
-#### Conclusion:
+## Conclusion:
 
 - This project was build only for educational purpose and won`t be in commercial use.
