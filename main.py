@@ -29,19 +29,19 @@ db = MongoEngine()
 db.init_app(app)
 
 
-#### DB Models
+# DB Models
 # define db models to create collections in MongoDB
 # define basic User Model - to register/login or use User information
 # use me as mongoengine alias. And for each field define what type it is.
 class User(me.Document):
     first_name = me.StringField(required=True)
     last_name = me.StringField(required=True)
-    #  username is set to be unique to prevent multiple users to have same 
+    #  username is set to be unique to prevent multiple users to have same
     # username
     username = me.StringField(required=True, unique=True)
     # email is set to be unique to prevent multiple users to have same email
     email = me.EmailField(required=True, unique=True)
-    # password is set to be a plain text field - because we will use 
+    # password is set to be a plain text field - because we will use
     # generate_password_hash so
     #  there is no need to hash it again
     password = me.StringField(max_length=256)
@@ -54,9 +54,9 @@ class Answer(me.EmbeddedDocument):
     # is correct boolean, will signify if the answer is correct or not
     is_correct = me.BooleanField(default=False)
 
-    # standard datetime field which will be updated every time Question is 
+    # standard datetime field which will be updated every time Question is
     # modified
-    # and that is why the default value datetime.datetime.now which is the now 
+    # and that is why the default value datetime.datetime.now which is the now
     # date/time (server time)
     date_modified = me.DateTimeField(default=datetime.datetime.now)
 
@@ -85,7 +85,7 @@ class QuestionsAnswered(me.EmbeddedDocument):
     chosen_answer = me.StringField()
     is_correct = me.BooleanField(default=False)
 
-   
+
 
 class QuizTaken(me.Document):
     user = me.ReferenceField(User)
