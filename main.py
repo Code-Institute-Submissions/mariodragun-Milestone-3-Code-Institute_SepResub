@@ -7,9 +7,7 @@ from flask import request, redirect, render_template, flash, url_for, session, g
 from werkzeug.security import generate_password_hash, check_password_hash
 import random
 
-
 from flask.json import jsonify
-
 
 from flask_mongoengine import MongoEngine
 import mongoengine as me
@@ -60,8 +58,6 @@ class Answer(me.EmbeddedDocument):
     # date/time (server time)
     date_modified = me.DateTimeField(default=datetime.datetime.now)
 
-
-
 class Question(me.Document):
     # stanard question text title
     title = me.StringField(required=True, unique=True)
@@ -103,10 +99,6 @@ class QuizTaken(me.Document):
     def overall_score(self):
         return f"{self.correct_answers}/{self.number_of_questions}"
 
-
-
-
-
 # init admin class
 admin = Admin(app, name="Quiz", template_mode="bootstrap3")
 
@@ -120,7 +112,6 @@ class QuestionsAdminView(ModelView):
 
 class QuizTakenAdminView(ModelView):
     column_filter = ["user"]
-
 
 # connecting User and Question models with Admin
 admin.add_view(UserAdminView(User))
@@ -276,7 +267,7 @@ def login():
     form = LoginForm(request.form)
 
     if request.method == "POST" and form.validate():
-        # this returns List and we need only one object and that
+        # this returns List and we need only one object and that
         # is why .first() is required
         user = User.objects(username=form.username.data).first()
         # if user exists
@@ -289,7 +280,7 @@ def login():
                 session["user_id"] = str(user_id)
                 return redirect(url_for("quiz"))
             else:
-                # Incorrect credentials - reload login and present form
+                # incorrect credentials - reload login and present form
                 flash("Incorrect credentils", "Danger")
                 return redirect(url_for("login"))
 
@@ -300,7 +291,6 @@ def login():
 def index():
     return render_template("index.html")
 
-   
 @app.route("/quiz/", methods=["GET", "POST"])
 def quiz():
     # see if user is in global object - if not redirect to login
@@ -314,11 +304,11 @@ def quiz():
         quiz_id = request.form.get("quiz")
         # if no quiz_id, create a new quiz and redirect to quiz start
         if quiz_id is None or quiz_id == "0":
-            #  create user quiz via helper function
+            # create user quiz via helper function
             user_quiz = create_user_quiz()
             return redirect(url_for("quiz_start", quiz_id=user_quiz.id))
 
-        #  open specific quiz with the specific ID
+        # open specific quiz with the specific ID
         return redirect(url_for("quiz_start", quiz_id=quiz_id))
 
     # get last unfinished quiz - to connect it with a submit option
@@ -327,7 +317,7 @@ def quiz():
 
     # display all of the previous users quizes
     return render_template(
-        "quiz_overview.html", 
+        "quiz_overview.html",
         user=g.user, users_quizes=all_users_quizes,
         last_unfinished_quiz=last_unfinished_quiz
     )
@@ -337,7 +327,7 @@ def quiz():
 def quiz_start(quiz_id):
     """View to start a quiz"""
 
-    #  if not user in global object - redirect to login
+    # if not user in global object - redirect to login
     if not g.user:
         return redirect(url_for("login"))
 
@@ -368,7 +358,7 @@ def quiz_start(quiz_id):
 
                 list_of_q.chosen_answer = supplied_answer
 
-                #  check if supplied answer is the correct one
+                # check if supplied answer is the correct one
                 if correct_answer.answer == supplied_answer:
                     list_of_q.is_correct = True
                     users_quiz.correct_answers = int(
