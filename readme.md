@@ -12,6 +12,7 @@
  his score history
 
 #### Project has the following sections:  
+
 - Home page contains image and navigation bar with acces to login, register, admin
 - Login page contains username field, pasword filed and login button
 - Register page contains fields: first name, last name, username, email
@@ -79,6 +80,7 @@
 - Moquaps used to make wireframes
 
 #### Testing:
+
 Application was tested on Chrome and Firefix browsers.
 Functionality tested:
 - that hover element changing color on navigation bar.
@@ -90,6 +92,11 @@ Functionality tested:
 - that admin can add new or to remove old questions
 
 #### Code Validation:
+
 - HTML code was validated using W3C Markup Validation Service, no errors found
 - CSS code was validated using W3C CSS Validation Service Jigsaw, no errors were found
 - Python  code was validated using PEP8 online checker, no errors found
+
+#### Deployment:
+
+- Project has been deployed at Github and Herouku
