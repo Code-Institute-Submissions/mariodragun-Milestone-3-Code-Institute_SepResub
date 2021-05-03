@@ -267,9 +267,8 @@ def register():
         new_user.save()
         flash("Successfully registered", "success")
         # return success message that registration is done
-        return jsonify({"registration": "done"})
-    else:
         return render_template("register.html", form=form)
+    
 
 @app.route("/login/", methods=["GET", "POST"])
 def login():
