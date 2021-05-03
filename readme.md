@@ -56,7 +56,7 @@
  
  ### As admin I want to:
 
- - easy access change database questionsa, to add  new one question  and to delete user
+ - easy access change database questions, to add  new questions and to delete user
  
  ### As user I want to:
 
