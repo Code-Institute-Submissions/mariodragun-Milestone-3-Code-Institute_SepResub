@@ -4,7 +4,7 @@
 
 <div>
     <h3>{{question.title}}</h3>
-    <form method="POST" action="{{url_for("quiz_start", quiz_id=quiz_id)}}">
+    <form method="POST" action="{{url_for('quiz_start', quiz_id=quiz_id)}}">
         {% for answer in question.answers%}
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="q_answer_" value="{{answer.answer}}" name="q_answers">
