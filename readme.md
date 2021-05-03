@@ -19,6 +19,7 @@
 
 
 - Register page contains fields: first name, last name, username, email, password, confirm password and register button
+
 - Admin page contains sections: home, user, questions, quiz taken
 
 
@@ -34,6 +35,10 @@
 - Dark grey color was used for navigation bar to fit with image on home page
 
 - Red color was chosen for hover element above of navigation bar
+
+### Image
+
+- Welcome image was downloaded from [WallpaperAccess](https://wallpaperaccess.com/quiz)
 
 
 ## Wireframes:
@@ -73,6 +78,8 @@
  - Python
 
  - Google Fonts
+ 
+ - Bootstrap 
 
  - Flask-mongoengine to add package to enable comunication with  MongoDB database
 
@@ -137,7 +144,6 @@ Functionality tested:
 
 [login](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/login%20html%20validator.JPG)
 
-[main](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/main%20py%20validator.JPG)
 
 [quiz complete](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/quiz%20complete%20html%20validator.JPG)
 
@@ -152,3 +158,13 @@ Functionality tested:
 #### Deployment:
 
 - Project has been deployed at Github and Herouku
+
+
+#### Further Development:
+
+- Plans for further development are to add more questions to database, to add more quizzes
+and to add area to show tables with scores.
+
+#### Conclusion:
+
+- This project was build only for educational purpose and won`t be in commercial use.
