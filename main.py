@@ -267,7 +267,7 @@ def register():
         new_user.save()
         flash("Successfully registered", "success")
         # return success message that registration is done
-        return render_template("register.html", form=form)
+        return jsonify({"registration": "done"})
     else:
         return render_template("register.html", form=form)
 
