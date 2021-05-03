@@ -404,9 +404,3 @@ def quiz_end(quiz_id):
 
     return render_template(
         "quiz_completed.html", user=g.user, score=existing_quiz.overall_score)
-    
-    
-    
-
-
-   
