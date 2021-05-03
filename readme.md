@@ -58,7 +58,10 @@
  - CSS
  - Python
  - Google Fonts
- - Flask
+ - Flask-mongoengine to add package to enable comunication with  MongoDB database
+ - Flask-WTF standard flask package for WTF forms
+ - Flask-Admin-package to enable admin view - to dispaly models and to enable 
+ manipulation with data on the website instead rellying on some other GUI tool.
  
 
 
@@ -75,6 +78,16 @@
 - Python code
 - Moquaps used to make wireframes
 
+#### Testing:
+Application was tested on Chrome and Firefix browsers.
+Functionality tested:
+- that hover element changing color on navigation bar.
+- that every link is opening right template 
+- that user registration is functional
+- that login is functional
+- that quiz is functional
+- that admin can delete users
+- that admin can add new or to remove old questions
 
 #### Code Validation:
 - HTML code was validated using W3C Markup Validation Service, no errors found
