@@ -403,6 +403,4 @@ def quiz_end(quiz_id):
         return redirect(url_for("quiz_start", quiz_id=quiz_id))
 
     return render_template(
-        "quiz_completed.html", user=g.user, score=existing_quiz.overall_score) 
-
-        
+        "quiz_completed.html", user=g.user, score=existing_quiz.overall_score)
