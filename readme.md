@@ -125,11 +125,29 @@ Functionality tested:
 
 #### Code Validation:
 
-- HTML code was validated using W3C Markup Validation Service, no errors found html [html validator](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/base%20html%20validator.JPG)
+- HTML code was validated using W3C Markup Validation Service, no errors found html [html base validator](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/base%20html%20validator.JPG)
 
 - CSS code was validated using W3C CSS Validation Service Jigsaw, no errors were found [CSS validator](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/css%20validator.JPG)
 
 - Python  code was validated using PEP8 online checker, no errors found [main python](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/main%20py%20validator.JPG)
+
+- Jinja templetes were unable to valdidate : 
+
+[index](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/index%20html%20validator.JPG)
+
+[login](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/login%20html%20validator.JPG)
+
+[main](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/main%20py%20validator.JPG)
+
+[quiz complete](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/quiz%20complete%20html%20validator.JPG)
+
+[quiz](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/templates/quiz.html)
+
+[quiz overview](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/templates/quiz_overview.html)
+
+[register](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/templates/register.html)
+
+
 
 #### Deployment:
 
