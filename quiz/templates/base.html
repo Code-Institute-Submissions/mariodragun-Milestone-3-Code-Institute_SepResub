@@ -11,18 +11,7 @@
     <title>Quiz</title>
 </head>
 <body>
-    <header>
-			<div class="navigationbar">
-                
-			    <a  href="/quiz/">Quiz</a>
-                
-                <a href="/login/">Login</a>
-
-                <a href="/register/">Register</a>
-                
-                <a href="/admin/">Admin</a>
-            </div>
-    </header>
+    {% include "components/navbar_header.html" %}
 
     {% block home_image %}
     {% endblock home_image %}
