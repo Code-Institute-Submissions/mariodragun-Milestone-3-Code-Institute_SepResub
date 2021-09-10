@@ -40,3 +40,7 @@
     border-radius: 3px;
     border: none;
 }
+
+.auth .error-message .alert {
+    padding: 5px;
+}
