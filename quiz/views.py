@@ -40,6 +40,7 @@ def login():
         # this returns List and we need only one object and that
         # is why .first() is required
         user = User.objects(username=form.username.data).first()
+
         # if user exists
         if user:
             if check_password_hash(user.password, form.password.data):
@@ -50,8 +51,9 @@ def login():
                 session["user_id"] = str(user_id)
                 return redirect(url_for("quiz"))
             else:
+    
                 # Incorrect credentials - reload login and present form
-                flash("Incorrect credentils", "Danger")
+                flash("Incorrect credentials")
                 return redirect(url_for("login"))
 
     # present form (on GET)
