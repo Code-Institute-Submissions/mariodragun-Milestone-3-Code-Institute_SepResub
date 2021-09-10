@@ -1,26 +1,31 @@
 {% extends "base.html" %}
 
+{% block extra_styles %}
+    <link rel="stylesheet" href="../assets/css/login.css">
+{% endblock %}
+
 {% block body %}
 
-{% from "includes/_formhelpers.html" import render_field %}
+    {% from "includes/_formhelpers.html" import render_field %}
 
-<h4>
-    <strong>
-        login
-    </strong>
-</h4>
-<hr>
+    <div class="row-fluid">
+        <div class="d-flex justify-content-center login">
+            <div class="card card-container">
+                <h2>Login</h2>
+                <form method="post" action="login" class="form-signin">
+                    <div class="item">
+                        {{ render_field(form.username, class="form-control") }}
+                    </div>
 
-<form method="POST">
+                    <div class="item">
+                            {{ render_field(form.password, class="form-control") }}
+                    </div>
 
-   
-    {{ render_field(form.username, class="form-control") }}
-    {{ render_field(form.password, class="form-control") }}
-    
-
-    <button type="submit" class="btn btn-primary">login</button>
-</form>
-
-<hr>
+                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
 
 {% endblock body %}

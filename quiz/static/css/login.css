@@ -1,0 +1,42 @@
+.login {
+    text-align: center;
+    margin-top: 40px;
+}
+.login .card {
+    padding: 40px;
+    box-shadow: 0 3px 3px #DEDEDE;
+    padding: 40px 20px 10px 20px;
+    width: 50%;
+    max-width: 400px;
+}
+
+.login .card span, .login .card label {
+    text-align: left;
+    line-height: 1.5;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.login .card .form-group, .login .card .item {
+    padding: 10px 0;
+}
+
+.login .card input {
+    width: 100%;
+    display: block;
+    padding: 2px 1px;
+    line-height: 1.5;
+}
+
+.login .card button {
+    background-color: rgb(104, 145, 162);
+    margin-top: 40px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    width: 100%;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+}
