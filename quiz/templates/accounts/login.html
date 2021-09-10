@@ -14,11 +14,11 @@
                 <h2>Login</h2>
                 <form method="post" action="login" class="form-login">
                     <div class="item">
-                        {{ render_field(form.username, class="form-control") }}
+                        {{ render_field(form.username, placeholder_text="Username", class="form-control") }}
                     </div>
 
                     <div class="item">
-                            {{ render_field(form.password, class="form-control") }}
+                            {{ render_field(form.password, type="password", placeholder_text="Password", class="form-control") }}
                     </div>
 
                     <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Login</button>
