@@ -1,6 +1,7 @@
 import os
 from flask import Flask
 from .db import get_db
+from .admin import register_admin_views
 
 
 # Application Factory
@@ -22,5 +23,8 @@ def create_app(test_config=None):
     with app.app_context():
         db = get_db()
         db.init_app(app)
+
+        # init admin and register admin views
+        register_admin_views(app)
 
     return app
