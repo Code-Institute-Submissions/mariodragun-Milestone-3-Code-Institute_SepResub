@@ -29,7 +29,7 @@ def register():
         # return success message that registration is done
         return redirect(url_for("login"))
     else:
-        return render_template("register.html", form=form)
+        return render_template("accounts/register.html", form=form)
 
 
 @app.route("/login/", methods=["GET", "POST"])
@@ -55,7 +55,7 @@ def login():
                 return redirect(url_for("login"))
 
     # present form (on GET)
-    return render_template("login.html", form=form)
+    return render_template("accounts/login.html", form=form)
 
 
 @app.route("/", methods=["GET"])
