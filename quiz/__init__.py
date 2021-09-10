@@ -1,5 +1,6 @@
 import os
 from flask import Flask
+from .db import get_db
 
 
 # Application Factory
@@ -16,5 +17,10 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
+
+    # get database and init it within app context
+    with app.app_context():
+        db = get_db()
+        db.init_app(app)
 
     return app
