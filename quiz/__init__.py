@@ -27,4 +27,7 @@ def create_app(test_config=None):
         # init admin and register admin views
         register_admin_views(app)
 
+        # import views within app context
+        import quiz.views
+
     return app

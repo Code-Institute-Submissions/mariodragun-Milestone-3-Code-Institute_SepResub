@@ -1,5 +1,5 @@
 from .forms import RegisterForm, LoginForm
-from flask import session, request, flash, redirect, render_template, url_for
+from flask import session, request, flash, redirect, render_template, url_for, g
 from flask import current_app as app
 from .models import User, QuizTaken
 from werkzeug.security import check_password_hash, generate_password_hash
