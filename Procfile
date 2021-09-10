@@ -1,1 +1,1 @@
-web: gunicorn main:app
+web: gunicorn "quiz:create_app()"
