@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 
 {% block extra_styles %}
-    <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="stylesheet" href="../assets/css/accounts/auth.css">
 {% endblock %}
 
 {% block body %}
     {% from "includes/_formhelpers.html" import render_field %}
 
     <div class="row-fluid">
-        <div class="d-flex justify-content-center login">
+        <div class="d-flex justify-content-center auth">
             <div class="card card-container">
                 <h2>Register</h2>
-                <form method="post" action="login" class="form-signin">
+                <form method="post" action="register" class="form-register">
                     <div class="item">
                         {{ render_field(form.first_name, class="form-control") }}
                     </div>

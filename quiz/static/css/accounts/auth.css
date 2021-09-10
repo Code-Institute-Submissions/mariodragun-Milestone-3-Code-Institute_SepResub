@@ -1,8 +1,8 @@
-.login {
+.auth {
     text-align: center;
     margin-top: 40px;
 }
-.login .card {
+.auth .card {
     padding: 40px;
     box-shadow: 0 3px 3px #DEDEDE;
     padding: 40px 20px 10px 20px;
@@ -10,25 +10,25 @@
     max-width: 400px;
 }
 
-.login .card span, .login .card label {
+.auth .card span, .auth .card label {
     text-align: left;
     line-height: 1.5;
     display: block;
     margin-bottom: 2px;
 }
 
-.login .card .form-group, .login .card .item {
+.auth .card .form-group, .auth .card .item {
     padding: 5px 0;
 }
 
-.login .card input {
+.auth .card input {
     width: 100%;
     display: block;
     padding: 2px 1px;
     line-height: 1.5;
 }
 
-.login .card button {
+.auth .card button {
     background-color: rgb(104, 145, 162);
     margin-top: 15px;
     font-weight: 700;
