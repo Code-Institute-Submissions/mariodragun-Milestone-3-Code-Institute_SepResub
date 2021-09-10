@@ -18,7 +18,7 @@
 }
 
 .login .card .form-group, .login .card .item {
-    padding: 10px 0;
+    padding: 5px 0;
 }
 
 .login .card input {
@@ -30,7 +30,7 @@
 
 .login .card button {
     background-color: rgb(104, 145, 162);
-    margin-top: 40px;
+    margin-top: 15px;
     font-weight: 700;
     font-size: 14px;
     height: 36px;
