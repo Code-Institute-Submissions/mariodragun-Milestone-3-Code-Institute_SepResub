@@ -8,11 +8,43 @@ from .helpers import create_user_quiz, set_users_questions
 
 @app.route("/register/", methods=["GET", "POST"])
 def register():
+    def email_is_already_in_use(email):
+        user = User.objects(email=email).first()
+        if user:
+            return True
+        return False
+
+    def username_is_already_in_use(username):
+        user = User.objects(username=username).first()
+        if user:
+            return True
+        return False
+
     #  init Registration form and add request.form data to it
     form = RegisterForm(request.form)
     # at the POST request chck if the form is valid
     # (if the initial validation is passed)
     if request.method == "POST" and form.validate():
+        # set the force reload boolean variable to False
+        reload = False
+
+        # check if email is already used (email is a unique field and it can be only one in db)
+        if email_is_already_in_use(email=form.email.data):
+            # set flash message which will be displayed on the template and set reload=True
+            flash("That email is already in use")
+            reload = True
+
+        # check if username is already used (username is unique field and it can be only one in db)
+        if username_is_already_in_use(username=form.username.data):
+            # set flash message which will be displayed on the template and set reload=True
+            flash("That username is already in use")
+            reload = True
+
+        # if force reload variable is set, redirect back to the register template
+        # which will load flash messages
+        if reload:
+            return redirect(url_for("register"))
+
         #  create a new user based on the form data,
         # and also generate password hash
         # to store password as a hash instead of a plain string
@@ -51,7 +83,7 @@ def login():
                 session["user_id"] = str(user_id)
                 return redirect(url_for("quiz"))
             else:
-    
+
                 # Incorrect credentials - reload login and present form
                 flash("Incorrect credentials")
                 return redirect(url_for("login"))
