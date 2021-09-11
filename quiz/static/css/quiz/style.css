@@ -20,3 +20,23 @@
 #quiz-question .card .button-wrapper a {
     float: right;
 }
+
+
+#quiz-completed {
+    margin-top: 20px;
+}
+
+#quiz-completed .card {
+    padding: 40px 20px;
+    box-shadow: 0 3px 3px #DEDEDE;
+    margin: 0 auto;
+}
+#quiz-completed .card .checkmark-wrapper {
+    text-align: center;
+}
+#quiz-completed .card  i {
+    color: #9ABC66;
+    font-size: 100px;
+    line-height: 200px;
+    margin-left:-15px;
+}
