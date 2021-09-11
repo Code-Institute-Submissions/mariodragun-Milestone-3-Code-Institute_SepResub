@@ -12,7 +12,7 @@
         {% block extra_styles %}
         {% endblock %}
 
-        <title>Quiz</title>
+        <title>{% block title %} Quiz {% endblock %}</title>
     </head>
     <body>
         {% include "components/navbar_header.html" %}
