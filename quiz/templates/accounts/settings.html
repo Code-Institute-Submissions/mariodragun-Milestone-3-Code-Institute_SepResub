@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %} Quiz - Settings {% endblock %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="../assets/css/accounts/settings.css">
+{% endblock %}
+
+{% block body %}
+    {% from "includes/_formhelpers.html" import render_field %}
+
+    <div class="row justify-content-center" id="settings">
+
+        {% include "components/flash_messages.html" %}
+
+        <div class="col-12 col-lg-10 col-xl-8 mx-auto">
+            <h2 class="h3 mb-4 page-title">Settings</h2>
+            <div class="my-4" id="basic-user-info-change">
+                <h5 class="mb-0 mt-5">User Account Settings</h5>
+                <p>Change your information.</p>
+                <hr class="my-4" />
+                <strong class="mb-0">Basic information</strong>
+                <p>Control security alert you will be notified.</p>
+                <div class="list-group mb-5 shadow">
+                    <div class="list-group-item">
+                        <div class="row align-items-center">
+                            <form method="post" action="/settings/basic-info-change" class="form-settings">
+                                <div class="item">
+                                    {{ render_field(form_basic.first_name, placeholder_text=user.first_name, prefil_value=user.first_name, class="form-control") }}
+                                </div>
+                                <div class="item">
+                                    {{ render_field(form_basic.last_name, placeholder_text=user.last_name, prefil_value=user.last_name, class="form-control") }}
+                                </div>
+                                <div class="item">
+                                    {{ render_field(form_basic.email, placeholder_text=user.email, prefil_value=user.email, class="form-control") }}
+                                </div>
+
+                                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Update Information</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="my-4" id="password-change">
+                <strong class="mb-0">Password Change</strong>
+                <p>Control security alert you will be notified.</p>
+                <div class="list-group mb-5 shadow">
+                    <div class="list-group-item">
+                        <div class="row align-items-center">
+                            <form method="post" action="/settings/password-change/" class="form-settings">
+                                <div class="item">
+                                    {{ render_field(form_password.password, placeholder_text="Password", type="password", class="form-control") }}
+                                </div>
+
+                                <div class="item">
+                                    {{ render_field(form_password.confirm_password, type="password", placeholder_text="Repeat password", class="form-control") }}
+                                </div>
+
+                                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Change Password</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock body %}

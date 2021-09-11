@@ -64,3 +64,52 @@ class LoginForm(Form):
             validators.DataRequired(message="Password is required."),
         ],
     )
+
+
+class AccountChangeInformationBasicForm(Form):
+    """Form to allow user change some basic information."""
+
+    # first name field
+    first_name = StringField(
+        "First name", validators=[validators.Length(max=50)]
+    )
+
+    # last name field
+    last_name = StringField(
+        "Last name", validators=[validators.Length(max=75)]
+    )
+
+    # email field
+    email = StringField(
+        "Email",
+        validators=[
+            validators.Email(message="Enter valid email"),
+            validators.DataRequired(message="Email is required"),
+        ],
+    )
+
+
+class AccountChangeInformationPasswordForm(Form):
+    """Form to allow user change password."""
+
+    # password field
+    password = PasswordField(
+        "Password",
+        validators=[
+            validators.Length(min=10, max=45),
+            validators.DataRequired(message="Password is required"),
+            validators.EqualTo(
+                fieldname="confirm_password",
+                message="Entered passwords do not match",
+            ),
+        ],
+    )
+
+    # confirm password field, which should be the same as the password field
+    confirm_password = PasswordField(
+        "Confirm Password",
+        validators=[
+            validators.Length(min=10, max=45),
+            validators.DataRequired("Confirm password is required."),
+        ],
+    )

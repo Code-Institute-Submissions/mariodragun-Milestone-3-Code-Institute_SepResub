@@ -1,0 +1,7 @@
+#settings {
+    margin-top: 40px;
+}
+
+#password-change  button, #basic-user-info-change button {
+    margin-top: 15px;
+}

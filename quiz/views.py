@@ -1,4 +1,9 @@
-from .forms import RegisterForm, LoginForm
+from .forms import (
+    RegisterForm,
+    LoginForm,
+    AccountChangeInformationBasicForm,
+    AccountChangeInformationPasswordForm,
+)
 from flask import (
     session,
     request,
@@ -134,6 +139,136 @@ def logout():
     session.clear()
     # redirect back to login
     return redirect(url_for("login"))
+
+
+@app.route("/settings/", methods=["GET"])
+def account_settings():
+    """Basic Account settings logic, in which user will be able to preview base
+    user information and be able to change it, if needed.
+    """
+
+    # see if user is in global object - if not redirect to login
+    if not g.user:
+        return redirect(url_for("login"))
+
+    # declare both forms which will be used on the settings page
+    form_basic = AccountChangeInformationBasicForm(request.form)
+    form_password = AccountChangeInformationPasswordForm(request.form)
+
+    # render settings template
+    return render_template(
+        "accounts/settings.html",
+        user=g.user,
+        form_basic=form_basic,
+        form_password=form_password,
+    )
+
+
+@app.route("/settings/password-change/", methods=["POST"])
+def account_password_change():
+    """Route for password change, will only accept POST requests, and on
+    success it will return back flash success message.
+    """
+
+    # see if user is in global object - if not redirect to login
+    if not g.user:
+        return redirect(url_for("login"))
+
+    # defining both forms which are on the settings views but we will use
+    # only form_password here
+    form_basic = AccountChangeInformationBasicForm(request.form)
+    form_password = AccountChangeInformationPasswordForm(request.form)
+
+    if form_password.validate():
+        password = form_password.password.data
+        confirm_password = form_password.confirm_password.data
+
+        # check if supplied password is the same as confirm_password
+        # if not then return flash message error
+        if password != confirm_password:
+            flash(
+                "Missmatch in the password/confirm password values.", "danger"
+            )
+            return redirect(url_for("account_settings"))
+
+        # generate hash password
+        hashed_password = generate_password_hash(password, method="sha256")
+        user = g.user
+
+        # update and store user
+        user.password = hashed_password
+        user.save()
+
+        # prepare a success flash message and output it to setting
+        flash("Password successfully changed.", "sucess")
+        return redirect(url_for("account_settings"))
+
+    # render settings template with all forms
+    return render_template(
+        "accounts/settings.html",
+        user=g.user,
+        form_basic=form_basic,
+        form_password=form_password,
+    )
+
+
+@app.route("/settings/basic-info-change/", methods=["POST"])
+def account_basic_info_change():
+    """Route for basic information change, will only accept POST requests, and on
+    success it will return back flash success message.
+    """
+
+    def email_is_already_in_use(email):
+        # Check if email is alredy used by some other user, and return bool
+        # value
+        user = User.objects(email=email).first()
+        if user and user.id != g.user.id:
+            return True
+        return False
+
+    # see if user is in global object - if not redirect to login
+    if not g.user:
+        return redirect(url_for("login"))
+
+    # defining both forms which are on the settings views but we will use
+    # only form_basic here
+    form_basic = AccountChangeInformationBasicForm(request.form)
+    form_password = AccountChangeInformationPasswordForm(request.form)
+
+    if form_basic.validate():
+        # get email from form data
+        email = form_basic.email.data
+
+        # check if email is in use, or if is not supplied in the form
+        if email and email_is_already_in_use(email=email) or not email:
+            # if email is not supplied report error
+            flash(
+                f"Unable to change to {email} because it is already used by\
+                    other user.",
+                "danger",
+            )
+            return redirect(url_for("account_settings"))
+
+        # get user from global object
+        user = g.user
+
+        # set and store new user information
+        user.first_name = form_basic.first_name.data
+        user.last_name = form_basic.last_name.data
+        user.email = email
+        user.save()
+
+        # set success flash message and redirect back output to settings
+        flash("Basic user information successfully changed.", "success")
+        return redirect(url_for("account_settings"))
+
+    # render form with user and all other forms
+    return render_template(
+        "accounts/settings.html",
+        user=g.user,
+        form_basic=form_basic,
+        form_password=form_password,
+    )
 
 
 @app.route("/", methods=["GET"])

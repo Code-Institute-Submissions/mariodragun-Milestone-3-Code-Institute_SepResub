@@ -1,10 +1,17 @@
-{% macro render_field(field, type, placeholder_text) %}
+{% macro render_field(field, type, placeholder_text, prefil_value) %}
 	<b>{{ field.label }}</b>
-	
-	{% if type == "password" %}
-		{{ field(type="password", placeholder=placeholder_text, **kwargs)|safe }}
+	{% if prefil_value %}
+		{% if type == "password" %}
+			{{ field(type="password", placeholder=placeholder_text, value=prefil_value, **kwargs)|safe }}
+		{% else %}
+			{{ field(placeholder=placeholder_text, value=prefil_value, **kwargs)|safe }}
+		{% endif %}
 	{% else %}
-		{{ field(placeholder=placeholder_text, **kwargs)|safe }}
+		{% if type == "password" %}
+			{{ field(type="password", placeholder=placeholder_text, **kwargs)|safe }}
+		{% else %}
+			{{ field(placeholder=placeholder_text, **kwargs)|safe }}
+		{% endif %}
 	{% endif %}
 
 	{% if field.errors %}
