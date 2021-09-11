@@ -6,8 +6,26 @@
     <link rel="stylesheet" href="/assets/css/home.css">
 {% endblock %}
 
-{% block home_image %}
+{% block body %}
     <div class="banner">
-        <img class="photo_main" src="assets/images/photo_main.jpg" alt="We're Sorry - It looks like your browser can not open this image">
-    </div>    
-{% endblock home_image %}
+        <img class="photo-main" src="assets/images/quiz-patterns-2.jpeg" alt="We're Sorry - It looks like your browser can not open this image">
+        <div class="layer"></div>
+    </div>
+
+    <div class="quiz-welcome">
+        <div class="justify-content-center" id="welcome">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="question-wrapper">
+                        <i class="fas fa-question"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="welcome-text col-sm">
+                    <h1 class="text-center">Quiz Competition</h1>
+                </div>
+            </div>
+        </div>
+    </div>   
+{% endblock %}

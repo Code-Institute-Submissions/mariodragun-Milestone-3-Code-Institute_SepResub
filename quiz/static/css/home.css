@@ -3,3 +3,59 @@
     color: #fff;
     font-weight: 900;
 }
+
+/* set image to max width and height to cover page */
+.photo-main{
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+
+/* setting one more backgroud layer to apply custom layer of color */
+.banner .layer {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* setting styles for welcome text on home page */
+#welcome {
+    margin-top: 20px;
+}
+
+#welcome .question-wrapper {
+    border-radius: 250px;
+    height: 250px;
+    width: 250px;
+    background: #F8FAF5;
+    margin:0 auto;
+}
+
+#welcome {
+    padding: 4rem 3rem;
+    margin: 0 auto;
+}
+#welcome .question-wrapper {
+    text-align: center;
+}
+#welcome  .question-wrapper i {
+    color: #353585;
+    font-size: 12rem;
+    line-height: 200px;
+    margin-left:-15px;
+    padding-top: 20px;
+}
+
+#welcome .welcome-text{
+    font-weight: 900;
+    color: #fff;
+}
