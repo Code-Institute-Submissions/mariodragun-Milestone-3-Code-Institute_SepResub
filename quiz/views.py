@@ -31,13 +31,13 @@ def register():
         # check if email is already used (email is a unique field and it can be only one in db)
         if email_is_already_in_use(email=form.email.data):
             # set flash message which will be displayed on the template and set reload=True
-            flash("That email is already in use")
+            flash("That email is already in use", "danger")
             reload = True
 
         # check if username is already used (username is unique field and it can be only one in db)
         if username_is_already_in_use(username=form.username.data):
             # set flash message which will be displayed on the template and set reload=True
-            flash("That username is already in use")
+            flash("That username is already in use", "danger")
             reload = True
 
         # if force reload variable is set, redirect back to the register template
@@ -85,7 +85,7 @@ def login():
             else:
 
                 # Incorrect credentials - reload login and present form
-                flash("Incorrect credentials")
+                flash("Incorrect credentials", "danger")
                 return redirect(url_for("login"))
 
     # present form (on GET)

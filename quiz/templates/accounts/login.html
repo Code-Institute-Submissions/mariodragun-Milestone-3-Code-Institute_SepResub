@@ -11,17 +11,8 @@
     <div class="row-fluid">
         <div class="d-flex justify-content-center auth">
             <div class="card card-container">
-                {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                        <div class="error-message">
-                            {% for message in messages %}
-                                <div class="alert alert-danger" role="alert">
-                                    {{ message }}
-                                </div>
-                            {% endfor %}
-                        </div>
-                    {% endif %}
-                {% endwith %}
+
+                {% include "components/flash_messages.html" %}
                 
                 <h2>Login</h2>
                 <form method="post" action="/login" class="form-login">
