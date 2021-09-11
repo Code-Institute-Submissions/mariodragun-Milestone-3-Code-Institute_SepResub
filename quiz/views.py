@@ -168,7 +168,7 @@ def quiz():
 
     # display all of the previous users quizes
     return render_template(
-        "quiz/quiz_overview.html",
+        "quiz/overview.html",
         user=g.user,
         users_quizes=all_users_quizes,
         last_unfinished_quiz=last_unfinished_quiz,
@@ -229,7 +229,7 @@ def quiz_start(quiz_id):
             return redirect(url_for("quiz_end", quiz_id=quiz_id))
 
         return render_template(
-            "quiz/quiz.html", question=question, quiz_id=quiz_id
+            "quiz/questions.html", question=question, quiz_id=quiz_id
         )
 
 
@@ -243,7 +243,7 @@ def quiz_end(quiz_id):
         return redirect(url_for("quiz_start", quiz_id=quiz_id))
 
     return render_template(
-        "quiz/quiz_completed.html",
+        "quiz/completed.html",
         user=g.user,
         score=existing_quiz.overall_score,
     )
