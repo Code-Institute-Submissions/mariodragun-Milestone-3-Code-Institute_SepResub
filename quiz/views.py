@@ -150,7 +150,10 @@ def quiz():
 
     # display all of the previous users quizes
     return render_template(
-        "quiz_overview.html", user=g.user, users_quizes=all_users_quizes, last_unfinished_quiz=last_unfinished_quiz
+        "quiz/quiz_overview.html",
+        user=g.user,
+        users_quizes=all_users_quizes,
+        last_unfinished_quiz=last_unfinished_quiz,
     )
 
 
@@ -205,7 +208,7 @@ def quiz_start(quiz_id):
         if question is None:
             return redirect(url_for("quiz_end", quiz_id=quiz_id))
 
-        return render_template("quiz.html", question=question, quiz_id=quiz_id)
+        return render_template("quiz/quiz.html", question=question, quiz_id=quiz_id)
 
 
 @app.route("/quiz/<quiz_id>/completed", methods=["GET"])
@@ -217,4 +220,4 @@ def quiz_end(quiz_id):
     if not existing_quiz.is_done:
         return redirect(url_for("quiz_start", quiz_id=quiz_id))
 
-    return render_template("quiz_completed.html", user=g.user, score=existing_quiz.overall_score)
+    return render_template("quiz/quiz_completed.html", user=g.user, score=existing_quiz.overall_score)
