@@ -1,3 +1,9 @@
+/* change navbar item color when on quiz */
+.navbar-dark .navbar-nav .quiz-link a.nav-link {
+    color: #fff;
+    font-weight: 900;
+}
+
 .quiz-overview {
     margin-top: 40px;
 }

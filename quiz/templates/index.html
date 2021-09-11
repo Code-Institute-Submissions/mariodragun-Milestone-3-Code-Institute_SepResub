@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
+{% block extra_styles %}
+    <link rel="stylesheet" href="/assets/css/home.css">
+{% endblock %}
+
 {% block home_image %}
-
-
-<div class="banner">
-    <img class="photo_main" src="assets/images/photo_main.jpg" alt="We're Sorry - It looks like your browser can not open this image">
-</div>
-    
-
- {% endblock home_image %}
+    <div class="banner">
+        <img class="photo_main" src="assets/images/photo_main.jpg" alt="We're Sorry - It looks like your browser can not open this image">
+    </div>    
+{% endblock home_image %}
