@@ -192,6 +192,16 @@ def quiz_start(quiz_id):
 
     if request.method == "POST":
         question_id = request.form.get("q")
+
+        # in the case that answers are not selected - display flash error and
+        # reload quiz question
+        if not request.form.getlist("q_answers"):
+            flash(
+                "You need to change an answer to be able to continue.",
+                "danger",
+            )
+            return redirect(url_for("quiz_start", quiz_id=quiz_id))
+
         supplied_answer = request.form.getlist("q_answers")[0]
 
         users_quiz = existing_quiz
