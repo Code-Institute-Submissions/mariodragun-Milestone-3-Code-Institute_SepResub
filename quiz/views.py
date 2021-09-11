@@ -6,6 +6,16 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from .helpers import create_user_quiz, set_users_questions
 
 
+@app.before_request
+def before_request():
+    g.user = None
+
+    # getting user object every request
+    if "user_id" in session:
+        user = User.objects(id=session["user_id"]).first()
+        g.user = user
+
+
 @app.route("/register/", methods=["GET", "POST"])
 def register():
     def email_is_already_in_use(email):
@@ -90,6 +100,23 @@ def login():
 
     # present form (on GET)
     return render_template("accounts/login.html", form=form)
+
+
+@app.route("/logout/", methods=["GET"])
+def logout():
+    """Basic Logout functionality which will remove user Session and then redirect user back to login screen."""
+
+    # see if user is in global object - if not redirect to login
+    if not g.user:
+        return redirect(url_for("login"))
+
+    # remove user
+    g.user = None
+
+    # clear session
+    session.clear()
+    # redirect back to login
+    return redirect(url_for("login"))
 
 
 @app.route("/", methods=["GET"])
