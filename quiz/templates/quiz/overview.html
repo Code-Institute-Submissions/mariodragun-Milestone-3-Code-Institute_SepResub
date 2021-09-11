@@ -28,7 +28,7 @@
                 <td>{{quiz.overall_score}}</td>
                 <td>{{quiz.is_done}}</td>
                 <td>
-                    <a class="btn btn-secondary" name="q_button" href="{{ url_for('quiz_start', quiz_id=quiz.id)}}">Continue</a>
+                    <a class="btn btn-secondary" href="{{ url_for('quiz_start', quiz_id=quiz.id)}}">Continue</a>
                 </td>
             </tr>
             {% endfor %}
@@ -37,9 +37,9 @@
     </table>
 
     <div class="row start-new">
-        <form method="POST" action="{{url_for('quiz')}}"
-            <input type="hidden" value="0" name="quiz" />
-            <button type="submit" class="btn btn-secondary" name="q_button">Start New Quiz</button>
+        <form method="POST" action="{{url_for('quiz')}}">
+            <input type="hidden" value="0" />
+            <button type="submit" class="btn btn-secondary">Start New Quiz</button>
         </form>
     </div>
 </div>
