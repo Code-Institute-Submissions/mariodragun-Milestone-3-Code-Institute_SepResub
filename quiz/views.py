@@ -197,7 +197,7 @@ def quiz_start(quiz_id):
         # reload quiz question
         if not request.form.getlist("q_answers"):
             flash(
-                "You need to change an answer to be able to continue.",
+                "You need to add an answer to be able to continue.",
                 "danger",
             )
             return redirect(url_for("quiz_start", quiz_id=quiz_id))
