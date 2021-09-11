@@ -1,18 +1,23 @@
 {% extends "base.html" %}
 
+{% block extra_styles %}
+    <link rel="stylesheet" href="../assets/css/quiz/style.css">
+{% endblock %}
+
 {% block body %}
 
-<div>
-    <h3>List of quizes for {{user.username}}</h3>
+<div class="quiz-overview">
+    <h3>List of quizes for <b>{{user.username|upper}}</b></h3>
     
 
     <table class="table">
-        <thead>
+        <thead class="table-dark">
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Started</th>
                 <th scope="col">Overall Score</th>
                 <th scope="col">Is Completed</th>
+                <th scope="col">Options</th>
             </tr>
         </thead>
         <tbody>
@@ -22,21 +27,24 @@
                 <td>{{quiz.date_started}}</td>
                 <td>{{quiz.overall_score}}</td>
                 <td>{{quiz.is_done}}</td>
+                <td>
+                    <form method="POST" action="{{url_for('quiz')}}"
+                        <input type="hidden" value="{{quiz.id}}" name="quiz" />
+                        <button type="submit" class="btn btn-secondary" name="q_button">Continue</button>
+                    </form>
+                </td>
             </tr>
             {% endfor %}
 
         </tbody>
     </table>
 
-    <form method="POST" action="{{url_for('quiz')}}"
-        <input type="hidden" value="{{last_unfinished_quiz.id}}" name="quiz" />
-        <button type="submit" class="btn btn-secondary" name="q_button">Continue</button>
-    </form>
-
-    <form method="POST" action="{{url_for('quiz')}}"
-        <input type="hidden" value="0" name="quiz" />
-        <button type="submit" class="btn btn-secondary" name="q_button">Start Quiz</button>
-    </form>
+    <div class="row start-new">
+        <form method="POST" action="{{url_for('quiz')}}"
+            <input type="hidden" value="0" name="quiz" />
+            <button type="submit" class="btn btn-secondary" name="q_button">Start New Quiz</button>
+        </form>
+    </div>
 </div>
 
 {% endblock body %}
