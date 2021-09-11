@@ -152,6 +152,7 @@ def quiz():
 
     if request.method == "POST":
         quiz_id = request.form.get("quiz")
+
         # if no quiz_id, create a new quiz and redirect to quiz start
         if quiz_id is None or quiz_id == "0":
             #  create user quiz via helper function

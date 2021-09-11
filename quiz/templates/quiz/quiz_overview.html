@@ -28,10 +28,7 @@
                 <td>{{quiz.overall_score}}</td>
                 <td>{{quiz.is_done}}</td>
                 <td>
-                    <form method="POST" action="{{url_for('quiz')}}"
-                        <input type="hidden" value="{{quiz.id}}" name="quiz" />
-                        <button type="submit" class="btn btn-secondary" name="q_button">Continue</button>
-                    </form>
+                    <a class="btn btn-secondary" name="q_button" href="{{ url_for('quiz_start', quiz_id=quiz.id)}}">Continue</a>
                 </td>
             </tr>
             {% endfor %}
