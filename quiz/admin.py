@@ -18,7 +18,10 @@ class QuizTakenAdminView(ModelView):
 
 
 def register_admin_views(app):
-    """Initialize admin views and register all the views which are required here."""
+    """
+    Initialize admin views and register all the views which are
+    required here.
+    """
 
     admin = Admin(app, name="Quiz", template_mode="bootstrap3")
 

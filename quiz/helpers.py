@@ -11,7 +11,9 @@ def create_user_quiz():
     # get only id's from the Questions and set them in the list
     all_questions_id_list = [str(x.id) for x in all_questions]
     # randomize list of id's from this
-    all_questions_id_list_random = random.sample(all_questions_id_list, k=all_questions.count())
+    all_questions_id_list_random = random.sample(
+        all_questions_id_list, k=all_questions.count()
+    )
 
     list_of_questions_generated_list = list()
     quiz_taken_number_of_questions_dict = {}
@@ -20,7 +22,9 @@ def create_user_quiz():
     for question_id in all_questions_id_list_random:
         question = all_questions.filter(id=question_id).first()
         quiz_taken_number_of_questions_dict = {"question": question}
-        list_of_questions_generated_list.append(quiz_taken_number_of_questions_dict)
+        list_of_questions_generated_list.append(
+            quiz_taken_number_of_questions_dict
+        )
 
     # create QuizTaken object with all available information
     quiz_taken = QuizTaken(

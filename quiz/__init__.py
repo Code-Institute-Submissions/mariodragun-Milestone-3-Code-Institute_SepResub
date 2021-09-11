@@ -8,10 +8,18 @@ from .admin import register_admin_views
 def create_app(test_config=None):
 
     # init flask app
-    app = Flask(__name__, static_folder="static", static_url_path="/assets", instance_relative_config=True)
+    app = Flask(
+        __name__,
+        static_folder="static",
+        static_url_path="/assets",
+        instance_relative_config=True,
+    )
 
     # add basic configurations from env variables
-    app.config.from_mapping(SECRET_KEY=os.getenv("SECRET_KEY"), MONGODB_HOST=os.getenv("MONGODB_HOST"))
+    app.config.from_mapping(
+        SECRET_KEY=os.getenv("SECRET_KEY"),
+        MONGODB_HOST=os.getenv("MONGODB_HOST"),
+    )
 
     # ensure that instance folder exists
     try:

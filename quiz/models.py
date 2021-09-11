@@ -57,7 +57,9 @@ class QuestionsAnswered(me.EmbeddedDocument):
 
 class QuizTaken(me.Document):
     user = me.ReferenceField(User)
-    list_of_questions = me.ListField(me.EmbeddedDocumentField(QuestionsAnswered))
+    list_of_questions = me.ListField(
+        me.EmbeddedDocumentField(QuestionsAnswered)
+    )
     number_of_questions = me.IntField()
     correct_answers = me.IntField(default=0)
 

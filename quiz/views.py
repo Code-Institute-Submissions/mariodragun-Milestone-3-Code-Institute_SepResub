@@ -1,5 +1,13 @@
 from .forms import RegisterForm, LoginForm
-from flask import session, request, flash, redirect, render_template, url_for, g
+from flask import (
+    session,
+    request,
+    flash,
+    redirect,
+    render_template,
+    url_for,
+    g,
+)
 from flask import current_app as app
 from .models import User, QuizTaken
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -38,20 +46,24 @@ def register():
         # set the force reload boolean variable to False
         reload = False
 
-        # check if email is already used (email is a unique field and it can be only one in db)
+        # check if email is already used (email is a unique field and it can
+        # be only one in db)
         if email_is_already_in_use(email=form.email.data):
-            # set flash message which will be displayed on the template and set reload=True
+            # set flash message which will be displayed on the template and set
+            # reload=True
             flash("That email is already in use", "danger")
             reload = True
 
-        # check if username is already used (username is unique field and it can be only one in db)
+        # check if username is already used (username is unique field and it
+        # can be only one in db)
         if username_is_already_in_use(username=form.username.data):
-            # set flash message which will be displayed on the template and set reload=True
+            # set flash message which will be displayed on the template and
+            # set reload=True
             flash("That username is already in use", "danger")
             reload = True
 
-        # if force reload variable is set, redirect back to the register template
-        # which will load flash messages
+        # if force reload variable is set, redirect back to the register
+        # template which will load flash messages
         if reload:
             return redirect(url_for("register"))
 
@@ -63,7 +75,9 @@ def register():
             last_name=form.last_name.data,
             username=form.username.data,
             email=form.email.data,
-            password=generate_password_hash(form.password.data, method="sha256"),
+            password=generate_password_hash(
+                form.password.data, method="sha256"
+            ),
         )
         # save new user
         new_user.save()
@@ -104,7 +118,10 @@ def login():
 
 @app.route("/logout/", methods=["GET"])
 def logout():
-    """Basic Logout functionality which will remove user Session and then redirect user back to login screen."""
+    """
+    Basic Logout functionality which will remove user Session and then
+    redirect user back to login screen.
+    """
 
     # see if user is in global object - if not redirect to login
     if not g.user:
@@ -196,7 +213,9 @@ def quiz_start(quiz_id):
                 #  check if supplied answer is the correct one
                 if correct_answer.answer == supplied_answer:
                     list_of_q.is_correct = True
-                    users_quiz.correct_answers = int(users_quiz.correct_answers) + 1
+                    users_quiz.correct_answers = (
+                        int(users_quiz.correct_answers) + 1
+                    )
 
         # update quiz object
         users_quiz.save()
@@ -208,7 +227,9 @@ def quiz_start(quiz_id):
         if question is None:
             return redirect(url_for("quiz_end", quiz_id=quiz_id))
 
-        return render_template("quiz/quiz.html", question=question, quiz_id=quiz_id)
+        return render_template(
+            "quiz/quiz.html", question=question, quiz_id=quiz_id
+        )
 
 
 @app.route("/quiz/<quiz_id>/completed", methods=["GET"])
@@ -220,4 +241,8 @@ def quiz_end(quiz_id):
     if not existing_quiz.is_done:
         return redirect(url_for("quiz_start", quiz_id=quiz_id))
 
-    return render_template("quiz/quiz_completed.html", user=g.user, score=existing_quiz.overall_score)
+    return render_template(
+        "quiz/quiz_completed.html",
+        user=g.user,
+        score=existing_quiz.overall_score,
+    )
