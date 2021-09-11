@@ -1,20 +1,20 @@
 {% macro render_field(field, type, placeholder_text) %}
-	<dt>{{ field.label }}
-	<dd>
-		{% if type == "password" %}
-			{{ field(type="password", placeholder=placeholder_text, **kwargs)|safe }}
-		{% else %}
-			{{ field(placeholder=placeholder_text, **kwargs)|safe }}
-		{% endif %}
+	<b>{{ field.label }}</b>
+	
+	{% if type == "password" %}
+		{{ field(type="password", placeholder=placeholder_text, **kwargs)|safe }}
+	{% else %}
+		{{ field(placeholder=placeholder_text, **kwargs)|safe }}
+	{% endif %}
 
-		{% if field.errors %}
-			<div class="error-message">
-				{% for error in field.errors %}
-					<div class="alert alert-danger" role="alert">
-						{{ error }}
-					</div>
-				{% endfor %}
-			</div>
-		{% endif %}
-	</dd>
+	{% if field.errors %}
+		<div class="error-message">
+			{% for error in field.errors %}
+				<div class="alert alert-danger" role="alert">
+					{{ error }}
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+	
 {% endmacro %}
