@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="../assets/css/common/error.css">
+{% endblock %}
+
+{% block body %}
+<div class="error-page">
+    <div class="row text-center">
+        <div class="col-lg-12">
+            <div class="error-icon">
+                <p><i class="fa fa-exclamation-triangle fa-5x"></i></p>
+            </div>
+            <h1>403 Forbidden</h1>
+            <p>Sorry, your access is refused due to security reasons.</p>
+            <a class="btn btn-danger" href="javascript:history.back()">Go Back</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -15,6 +15,9 @@ class User(me.Document):
     #  there is no need to hash it again
     password = me.StringField(max_length=256)
 
+    is_active = me.BooleanField(default=True)
+    is_admin = me.BooleanField(default=False)
+
 
 # Question - list of answers (one or many can be true)
 class Answer(me.EmbeddedDocument):
