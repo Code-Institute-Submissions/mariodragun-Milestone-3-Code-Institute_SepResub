@@ -10,33 +10,23 @@
 
 <div class="quiz-overview">
     <h3>List of quizes for <b>{{user.username|upper}}</b></h3>
-    
-
-    <table class="table">
-        <thead class="table-dark">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Started</th>
-                <th scope="col">Overall Score</th>
-                <th scope="col">Is Completed</th>
-                <th scope="col">Options</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for quiz in users_quizes%}
-            <tr>
-                <th scope="row">*</th>
-                <td>{{quiz.date_started}}</td>
-                <td>{{quiz.overall_score}}</td>
-                <td>{{quiz.is_done}}</td>
-                <td>
+    {% for quiz in users_quizes%}
+        <div class="d-flex justify-content-left user-quiz-info">   
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{quiz.title}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><b>Data Started:</b> {{quiz.date_started}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted"><b>Score:</b> {{quiz.date_started}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted"><b>Completed:</b> {{quiz.is_done}}</h6>
+                    <p class="card-text">{{quiz.description}}</p>
+                </div>
+                <div class="d-grid d-md-block button-wrapper" style="padding: 10px;">
                     <a class="btn btn-secondary" href="{{ url_for('quiz_start', quiz_id=quiz.id)}}">Continue</a>
-                </td>
-            </tr>
-            {% endfor %}
-
-        </tbody>
-    </table>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    
 
     <div class="row start-new">
         <form method="POST" action="{{url_for('quiz')}}">

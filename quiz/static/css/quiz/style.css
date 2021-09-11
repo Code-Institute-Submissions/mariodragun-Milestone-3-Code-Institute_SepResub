@@ -46,3 +46,22 @@
     line-height: 200px;
     margin-left:-15px;
 }
+
+/* user quiz info styling on overview page */
+.user-quiz-info {
+    margin-top: 10px;
+}
+
+
+.user-quiz-info .card {
+    box-shadow: 0 3px 3px #DEDEDE;
+}
+
+.user-quiz-info .card h6 b {
+    font-weight: 900;
+}
+
+.start-new {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
