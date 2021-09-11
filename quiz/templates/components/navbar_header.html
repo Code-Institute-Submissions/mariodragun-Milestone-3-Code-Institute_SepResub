@@ -1,17 +1,27 @@
-<header>
-    <div class="navigationbar">
-        
-        <a  href="/quiz/">Quiz</a>
-    
-        {% if not g.user %}
-            <a href="/login/">Login</a>
+<header class="p-3 bg-dark text-white" id="header-nav">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
-            <a href="/register/">Register</a>
-        {% endif %}
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li class="nav-item"><a href="/" class="nav-link px-2 text-white" id="nav-index">Home</a></li>
+            <li class="nav-item"><a href="/quiz/" class="nav-link px-2 text-white" id="nav-quiz">Quiz</a></li>
 
-        {% if g.user %}
-            <a href="/logout/">Logout</a>
-            <a href="/admin/">Admin</a>
-        {% endif %}
+            {% if g.user %}
+                <li class="nav-item"><a href="/settings/" class="nav-link px-2 text-white" id="nav-quiz">Settings</a></li>
+            {% endif %}
+        </ul>
+
+
+        <div class="text-end">
+            {% if not g.user %}
+                <a class="btn btn-outline-light me-2" href="/login/" role="button">Login</a>
+                <a class="btn btn-outline-light me-2" href="/register/" role="button">Register</a>
+            {% endif %}
+            {% if g.user %}
+                <a class="btn btn-outline-light me-2" href="/logout/" role="button">Logout</a>
+                {% if g.user.is_admin %}
+                    <a class="btn btn-outline-light me-2" href="/admin/" role="button">Admin</a>
+                {% endif %}
+            {% endif %}
+        </div>
     </div>
 </header>
