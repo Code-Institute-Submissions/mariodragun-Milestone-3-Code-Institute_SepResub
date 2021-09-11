@@ -1,27 +1,44 @@
 <header class="p-3 bg-dark text-white" id="header-nav">
-    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
 
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li class="nav-item"><a href="/" class="nav-link px-2 text-white" id="nav-index">Home</a></li>
-            <li class="nav-item"><a href="/quiz/" class="nav-link px-2 text-white" id="nav-quiz">Quiz</a></li>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                    <li class="nav-item home-link">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item quiz-link">
+                        <a class="nav-link" href="/quiz/">Quiz</a>
+                    </li>
+                </ul>
 
-            {% if g.user %}
-                <li class="nav-item"><a href="/settings/" class="nav-link px-2 text-white" id="nav-quiz">Settings</a></li>
-            {% endif %}
-        </ul>
-
-
-        <div class="text-end">
-            {% if not g.user %}
-                <a class="btn btn-outline-light me-2" href="/login/" role="button">Login</a>
-                <a class="btn btn-outline-light me-2" href="/register/" role="button">Register</a>
-            {% endif %}
-            {% if g.user %}
-                <a class="btn btn-outline-light me-2" href="/logout/" role="button">Logout</a>
-                {% if g.user.is_admin %}
-                    <a class="btn btn-outline-light me-2" href="/admin/" role="button">Admin</a>
-                {% endif %}
-            {% endif %}
+                <ul class="navbar-nav col-auto mb-2 mb-sm-0 pull-right">
+                    {% if not g.user %}
+                        <a class="btn btn-outline-light me-2" href="/login/" role="button">Login</a>
+                        <a class="btn btn-outline-light me-2" href="/register/" role="button">Register</a>
+                    {% endif %}
+                    
+                    {% if g.user %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="user-icon"><i class="fas fa-user-circle"></i></span>{{g.user.username}}
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown03">
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                {% if g.user.is_admin %}
+                                    <li><a class="dropdown-item" href="/admin/">Admin</a></li>
+                                {% endif %}
+                                <li><a class="dropdown-item" href="/logout/">Logout</a></li>
+                            </ul>
+                        </li>
+                    {% endif %}
+                    
+                </ul>
+            </div>
         </div>
-    </div>
+    </nav>
+
 </header>
+
+
+
