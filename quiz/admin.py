@@ -1,7 +1,7 @@
 from flask_admin.base import Admin, AdminIndexView, expose
 from flask_admin.contrib.mongoengine.view import ModelView
 from .models import User, Question, QuizTaken
-from flask import redirect, url_for, g
+from flask import g
 from flask_admin.menu import MenuLink
 
 
@@ -27,8 +27,8 @@ class AdminDashboardView(AdminIndexView):
 
     @expose("/")
     def index(self):
-        # check if the user has the permission to access this page, only admin users
-        # should be able to see admin panel
+        # check if the user has the permission to access this page, only
+        # admin users should be able to see admin panel
         if g.user and g.user.is_admin:
             return self.render("admin/index.html")
         # return redirect(url_for("login"))
