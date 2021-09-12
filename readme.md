@@ -284,19 +284,19 @@ HTML:
 
 Python:
 
-- [__init__.py]()
+- [__init__.py](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/quiz/__init__.py)-----[test result](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/python/pep8_admin.JPG)
 __
-- [admin.py](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/python/pep8_admin.JPG)
+- [admin.py](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/quiz/admin.py)-----[test result](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/python/pep8_admin.JPG)
 
-- [db.py](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/python/pep8_db.JPG)
+- [db.py](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/quiz/db.py)-----[test result](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/python/pep8_db.JPG)
 
-- [forms.py](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/python/pep8_forms.JPG)
+- [forms.py](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/quiz/forms.py)(https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/python/pep8_forms.JPG)
 
-- [helpers.py](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/python/pep8_helpers.JPG)
+- [helpers.py](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/quiz/helpers.py)-----[test result](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/python/pep8_helpers.JPG)
 
-- [models.py](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/python/pep8_models.JPG)
+- [models.py](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/quiz/models.py)-----[test result](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/python/pep8_models.JPG)
 
-- [views.py](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/python/pep8_views.JPG)
+- [views.py](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/quiz/views.py)-----[test result](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/python/pep8_views.JPG)
 
 CSS: 
 
