@@ -152,6 +152,8 @@ Quiz overview:
 
  - [Jigsaw](https://jigsaw.w3.org/css-validator/) foR CSS validation
 
+ - [Moqups](https://moqups.com/?gclid=CjwKCAjwyvaJBhBpEiwA8d38vAw9ErkdYKdVqJZL-V-eMhg-lKZ_nlq20ONlAebM8DizNLHLdp6UvxoCOd8QAvD_BwE) for wireframes
+
  ## Deployment:
 
 ### Project setup:
