@@ -210,13 +210,13 @@ The application was tested on the following smartphone devices: iPhone11, Google
 
 ### Functional testing:
 
-- That all of the links are open wihout any problems
+- That all of the links are open without any problems
 
 - That application is mobile responsive
 
 - That user can get logged in
 
-- That quiz can not be run before user is logged in
+- That quiz can`t be run before user is logged in
 
 - That user needs to create account 
 
