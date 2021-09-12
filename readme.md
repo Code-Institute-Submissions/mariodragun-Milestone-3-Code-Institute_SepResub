@@ -71,5 +71,15 @@ This site allows users to play short general knowledge quiz and to track their s
 
  - Navigation bar color [#333](https://htmlcolors.com/hex/333)
  - Primary background color [#F5F5F5](https://www.color-hex.com/color/f5f5f5)
- - Navigation abr link []
+ - Navigation bar links []
  - 
+
+#### Design
+
+- [Home Page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/home_page_image.JPG)
+
+- [Login page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/login_page_image.JPG)
+
+- [Quiz page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/quiz_page_image.JPG)
+
+- [Register page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/register_page_image.JPG)
