@@ -162,6 +162,26 @@ Throughout the development of the project, I carried out testing. I used the Chr
 The application structure and mobile-first layout was tested on Google Chrome, Firefox and Safari.
 The application was tested on the following smartphone devices: iPhone11, Google Pixel 3, Galaxy S7
 
+#### Functional testing:
+
+- That all of the links are open wihout any problems
+
+- That application is mobile responsive
+
+- That user can get logged in
+
+- That quiz can not be run before user is logged in
+
+- That user needs to create account 
+
+- That user name and e-mail must be unique
+
+- That user name and password length must be between 10 and 150 characters 
+
+- That e mail must be in valid form
+
+- 
+
 #### Testing examples:
 
 Google Chrome:
