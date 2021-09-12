@@ -4,13 +4,13 @@
 
 ## Summary:
 
-The purpose of the project is to build a site where users can play the quiz, tracked their scores and that admin can easily modify data base, add new questions, delete old ones and to delete users.
+The purpose of the project is to build a site where users, can play the quiz, tracked their scores and also where admin can easily modify data base, add and delete users and questions.
+This site allows users to play short general knowledge quiz.
 
-This site allows users to play short general knowledge quiz and to track their scores.
 
 ### The project has the following sections:  
 
-- Home page contains main image and navigation bar with access to quiz, login, register
+- Home page contains main image and navigation bar with access to quiz, login and register
 
 - Login page contains username field, password filed and login button
 
@@ -27,19 +27,18 @@ This site allows users to play short general knowledge quiz and to track their s
  
  ### Admin stories:
 
- - As an admin I would like to be able to add new questions, to add and to delete users
+ - As an admin I would like to manage a smoothly functioning game 
+
+ - As an admin I would like to be able to add new questions
 
  - As an admin I would like to add users and to delete them
 
- - As an admin I would like to
  
  ### User stories:
 
- - As a user I would like to register
+ - As a user I would like to register and login easily and conveniently through a simple process
 
- - As a user I would like to login
-
- - As a user I would like to play general knowledge quiz
+ - As a user I would like to play quiz where I can test my general knowledge 
 
  - As a user I would like to track my previous score
 
@@ -71,7 +70,7 @@ This site allows users to play short general knowledge quiz and to track their s
 
 ### Images:
 
-- Welcome image downloaded from [WallpaperAccess](https://wallpaperaccess.com/)
+- I downloaded Welcome image from [WallpaperAccess](https://wallpaperaccess.com/)
 
 ### Colors:
 
@@ -150,7 +149,7 @@ Quiz overview:
 
  - [W3C](https://validator.w3.org/) for HTML validation
 
- - [Jigsaw](https://jigsaw.w3.org/css-validator/) foR CSS validation
+ - [Jigsaw](https://jigsaw.w3.org/css-validator/) for CSS validation
 
  - [Moqups](https://moqups.com/?gclid=CjwKCAjwyvaJBhBpEiwA8d38vAw9ErkdYKdVqJZL-V-eMhg-lKZ_nlq20ONlAebM8DizNLHLdp6UvxoCOd8QAvD_BwE) for wireframes
 
@@ -170,7 +169,7 @@ Github:
 
 - Make regular commits after project change with quality description using commands: git add -A and git commit -m "message"
 
-- Use git push command in CMD for code commits
+- Use git push command in terminal for code commits
 
 MongoDB:
 
@@ -186,9 +185,9 @@ Heroku:
 
 - Register account 
 
-- Press Button New
+- Press button New
 
-- Select Create a New App, enter the app name and select region
+- Select create a New App, enter the app name and select region
 
 - Press Resource and connect with database
 
@@ -210,13 +209,13 @@ The application was tested on the following smartphone devices: iPhone11, Google
 
 ### Functional testing:
 
-- That all of the links are open without any problems
+- That all of the links are open smoothly
 
 - That application is mobile responsive
 
 - That user can get logged in
 
-- That quiz can`t be run before user is logged in
+- That quiz can not be run before user is logged in
 
 - That user needs to create account 
 
@@ -232,9 +231,9 @@ The application was tested on the following smartphone devices: iPhone11, Google
 
 - If someone write \admin\ in URL gets [error message](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/error_link.JPG)
 
-- That user can continue unfinshed quizzes
+- That user can continue with unfinished session 
 
-- That finished quizzes is  inaccessible for players
+- That finished session is inaccessible for players
 
 
 
