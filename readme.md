@@ -274,8 +274,9 @@ HTML:
 
 - [Quiz page, user logged](https://ms3-mario.herokuapp.com/quiz/)-----[test result](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/quiz_page_html_user.JPG)
 
-- [Register page](https://ms3-mario.herokuapp.com/register/)-----[test result](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/register_page_html.JPG)]
-- [Login page](https://ms3-mario.herokuapp.com/login/)-----[test results](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/login_page_html.JPG]
+- [Register page](https://ms3-mario.herokuapp.com/register/)-----[test result](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/register_page_html.JPG)
+
+- [Login page](https://ms3-mario.herokuapp.com/login/)-----[test results](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/login_page_html.JPG)
 
 - [Settings page, user logged](https://ms3-mario.herokuapp.com/settings/)-----[test result](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/settings_page_html.JPG)
 
