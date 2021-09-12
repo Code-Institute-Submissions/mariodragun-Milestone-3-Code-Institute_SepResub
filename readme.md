@@ -219,12 +219,31 @@ Safari / mobile phone:
 
 HTML:
 - [Home page](https://ms3-mario.herokuapp.com/)------[test results](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/home_page_html_validation.JPG)
+
 - [Quiz page](https://ms3-mario.herokuapp.com/login/)-----[test results](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/quiz_page_html.JPG)
+
 - [Quiz page, user logged](https://ms3-mario.herokuapp.com/quiz/)-----[test results](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/quiz_page_html_user.JPG)
+
 - [Register page](https://ms3-mario.herokuapp.com/register/)-----[test results](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/register_page_html.JPG)]
-- [Login page](https://ms3-mario.herokuapp.com/login/)-----[test results][https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/login_page_html.JPG]
+- [Login page](https://ms3-mario.herokuapp.com/login/)-----[test results](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/login_page_html.JPG]
+
 - [Settings page, user logged](https://ms3-mario.herokuapp.com/settings/)-----[test results](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/settings_page_html.JPG)
+
 - [Admin page, admin logged](https://ms3-mario.herokuapp.com/admin/)-----[test results](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/admin_page_html.JPG)
+
 
 Python:
 
+- [__init__.py]()
+__
+- [admin.py]()
+
+- [db.py]()
+
+- [forms.py]()
+
+- [helpers.py]()
+
+- [models.py]()
+
+- [views.py]()
