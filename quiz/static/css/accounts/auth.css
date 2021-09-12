@@ -1,7 +1,10 @@
+/* basic top positioning */
 .auth {
     text-align: center;
     margin-top: 40px;
 }
+
+/* setting auth card style */
 .auth .card {
     padding: 40px;
     box-shadow: 0 3px 3px #DEDEDE;
@@ -10,6 +13,7 @@
     max-width: 400px;
 }
 
+/* setting style of the auth label */
 .auth .card span, .auth .card label {
     text-align: left;
     line-height: 1.5;
@@ -22,6 +26,7 @@
     padding: 5px 0;
 }
 
+/* styling input boxes for login/register */
 .auth .card input {
     width: 100%;
     display: block;
@@ -29,6 +34,7 @@
     line-height: 1.5;
 }
 
+/* button positioning and styling */
 .auth .card button {
     background-color: rgb(104, 145, 162);
     margin-top: 15px;

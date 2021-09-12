@@ -1,7 +1,10 @@
+/* base error page styling - moving from top*/
 .error-page {
     margin-top: 40px;
 }
+
+/* set error page icon position */
 .error-page .error-icon {
     margin-top: 30px;
-    margin-bottom: 30pxl
+    margin-bottom: 30px;
 }

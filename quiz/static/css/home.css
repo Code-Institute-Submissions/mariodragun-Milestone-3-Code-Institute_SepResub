@@ -30,23 +30,20 @@
 /* setting styles for welcome text on home page */
 #welcome {
     margin-top: 20px;
+    padding: 4rem 3rem;
+    margin: 0 auto;
 }
 
+/* wrapper for the question icon */
 #welcome .question-wrapper {
     border-radius: 250px;
     height: 250px;
     width: 250px;
     background: #F8FAF5;
     margin:0 auto;
-}
-
-#welcome {
-    padding: 4rem 3rem;
-    margin: 0 auto;
-}
-#welcome .question-wrapper {
     text-align: center;
 }
+
 #welcome  .question-wrapper i {
     color: #353585;
     font-size: 12rem;

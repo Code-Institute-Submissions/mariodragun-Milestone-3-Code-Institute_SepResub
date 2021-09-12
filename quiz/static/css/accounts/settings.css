@@ -1,7 +1,9 @@
+/* basic moving settings page from top */
 #settings {
     margin-top: 40px;
 }
 
+/* button positioning */
 #password-change  button, #basic-user-info-change button {
     margin-top: 15px;
 }

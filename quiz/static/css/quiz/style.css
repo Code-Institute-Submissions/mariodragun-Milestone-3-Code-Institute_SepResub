@@ -4,15 +4,18 @@
     font-weight: 900;
 }
 
+/* guiz overview top position */
 .quiz-overview {
     margin-top: 40px;
 }
 
+/* styling for h3 on overview */
 .quiz-overview h3 {
     margin-bottom: 30px;
 }
 
 
+/* single question styling */
 #quiz-question .card{
     min-width: 50%;
     margin-top: 40px;
@@ -28,18 +31,22 @@
 }
 
 
+/* quiz completed page top position */
 #quiz-completed {
     margin-top: 20px;
 }
 
+/* styling for completed card */
 #quiz-completed .card {
     padding: 40px 20px;
     box-shadow: 0 3px 3px #DEDEDE;
     margin: 0 auto;
 }
+
 #quiz-completed .card .checkmark-wrapper {
     text-align: center;
 }
+
 #quiz-completed .card  i {
     color: #9ABC66;
     font-size: 100px;
@@ -61,6 +68,7 @@
     font-weight: 900;
 }
 
+/* styling for a start another quiz button */
 .start-new {
     margin-top: 20px;
     margin-bottom: 40px;
