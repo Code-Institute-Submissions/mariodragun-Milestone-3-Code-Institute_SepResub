@@ -180,6 +180,7 @@ Heroku:
 - Press Resource and connect with database
 
 MongoDB:
+
 - Navigate to [MongoDB](https://account.mongodb.com/account/login?signedOut=true)
 
 - Create account 
@@ -188,7 +189,7 @@ MongoDB:
 
 Deployment`s final steps:
 
-- After registration of test users, change status of one the user to [admin](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/deployment/admin_MongoDB.JPG)
+- After registration of test users, change status of one of the users to [admin](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/deployment/admin_MongoDB.JPG)
 
 - Create quiz questions
 
@@ -225,9 +226,9 @@ The application was tested on the following smartphone devices: iPhone11, Google
 
 - If someone write \admin\ in URL gets [error message]()
 
-- That user can continue unfinshed quizes
+- That user can continue unfinshed quizzes
 
-- That finsihed quizes is  inaccessible
+- That finished quizzes is  inaccessible
 
 
 
@@ -295,14 +296,14 @@ __
 
 CSS: 
 
-- [CSS/style.css](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/quiz/static/css/style.css)-----[test result]()
+- [CSS/style.css](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/quiz/static/css/style.css)-----[test result](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/css/styel_jigsaw.JPG)
 
-- [CSS/home.css](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/quiz/static/css/home.css)-----[test result]()
+- [CSS/home.css](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/quiz/static/css/home.css)-----[test result](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/css/home_css_jigsaw.JPG)
 
-- [CSS/quiz/style](https://github.com/mariodragun/Milestone-3-Code-Institute/tree/master/quiz/static/css/quiz)-----[test result]()
+- [CSS/quiz/style](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/quiz/static/css/quiz/style.css))-----[test result](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/css/styel_jigsaw.JPG)
 
-- [CSS/quiz/common](https://github.com/mariodragun/Milestone-3-Code-Institute/tree/master/quiz/static/css/common)-----[test result]()
+- [CSS/quiz/common/errors](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/quiz/static/css/common/error.css)-----[test result](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/css/error_css_jigsaw.JPG)
 
-- [CSS/quiz/accounts/auth](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/quiz/static/css/accounts/auth.css)-----[test result]()
+- [CSS/quiz/accounts/auth](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/quiz/static/css/accounts/auth.css)-----[test result](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/css/auth_css_jigsaw.JPG)
 
-- [CSS/quiz/accounts/settings](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/quiz/static/css/accounts/settings.css)-----[test result]()
+- [CSS/quiz/accounts/settings](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/quiz/static/css/accounts/settings.css)-----[test result](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/css/setting_css_jigsaw.JPG)
