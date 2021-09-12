@@ -53,3 +53,4 @@ def register_admin_views(app):
 
     # define link to the Website, to be able to return back to Quiz
     admin.add_link(MenuLink(name="Back to the Website", category="", url="/"))
+    

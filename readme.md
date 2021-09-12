@@ -162,15 +162,16 @@ Safari / mobile phone
 - [Settings page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/safari_mobile/settings_page_mobile.PNG)
 - [Admin page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/safari_mobile/admin_page_mobile.PNG)
 
-Validator test
+###Validator tests:
 
-[Home page](https://ms3-mario.herokuapp.com/)------[test results]()
-[Quiz page](https://ms3-mario.herokuapp.com/login/)-----[test results]()
-[Quiz page, user logged](https://ms3-mario.herokuapp.com/quiz/)-----[test results]()
-[Register page](https://ms3-mario.herokuapp.com/register/)-----[test results(https://ms3-mario.herokuapp.com/register/)]
-[Login page](https://ms3-mario.herokuapp.com/login/)
-[Settings page, user logged](https://ms3-mario.herokuapp.com/settings/)-----[test results]()
-[Admin page, admin logged](https://ms3-mario.herokuapp.com/admin/)-----[test results]()
+HTML
+- [Home page](https://ms3-mario.herokuapp.com/)------[test results]()
+- Quiz page](https://ms3-mario.herokuapp.com/login/)-----[test results]()
+- [Quiz page, user logged](https://ms3-mario.herokuapp.com/quiz/)-----[test results]()
+- [Register page](https://ms3-mario.herokuapp.com/register/)-----[test results(https://ms3-mario.herokuapp.com/register/)]
+- [Login page](https://ms3-mario.herokuapp.com/login/)
+- [Settings page, user logged](https://ms3-mario.herokuapp.com/settings/)-----[test results]()
+- [Admin page, admin logged](https://ms3-mario.herokuapp.com/admin/)-----[test results]()
 
 
 

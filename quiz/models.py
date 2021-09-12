@@ -74,3 +74,4 @@ class QuizTaken(me.Document):
     @property
     def overall_score(self):
         return f"{self.correct_answers}/{self.number_of_questions}"
+        

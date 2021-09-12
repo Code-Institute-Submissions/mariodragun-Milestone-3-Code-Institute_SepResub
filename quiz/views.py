@@ -392,3 +392,4 @@ def quiz_end(quiz_id):
         user=g.user,
         score=existing_quiz.overall_score,
     )
+    
