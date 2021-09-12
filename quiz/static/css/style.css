@@ -2,7 +2,7 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: #F5F5F5;
+    background-color: lightgrey;
 }
 
 /* background color to the navigation */
@@ -14,7 +14,7 @@ body{
 /* adding style to links in navigation bar*/
 .navigationbar a {
   float: left;
-  color: ##FF0000;
+  color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;

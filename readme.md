@@ -236,14 +236,14 @@ Python:
 
 - [__init__.py]()
 __
-- [admin.py]()
+- [admin.py](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/python/pep8_admin.JPG)
 
-- [db.py]()
+- [db.py](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/python/pep8_db.JPG)
 
-- [forms.py]()
+- [forms.py](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/python/pep8_forms.JPG)
 
-- [helpers.py]()
+- [helpers.py](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/python/pep8_helpers.JPG)
 
-- [models.py]()
+- [models.py](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/python/pep8_models.JPG)
 
-- [views.py]()
+- [views.py](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/python/pep8_views.JPG)
