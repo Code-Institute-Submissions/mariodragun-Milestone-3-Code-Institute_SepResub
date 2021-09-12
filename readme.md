@@ -153,7 +153,7 @@ Firefox:
 - [Settings page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/firefox%20desktop/settings_page_firefox.JPG)
 - [Admin page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/firefox%20desktop/admin_page_firefox.JPG)
 
-Safari / mobile phone
+Safari / mobile phone:
 
 - [Home page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/safari_mobile/home_page_mobile.PNG)
 - [Login page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/safari_mobile/login_page_mobile.PNG)
@@ -164,14 +164,14 @@ Safari / mobile phone
 
 ###Validator tests:
 
-HTML
-- [Home page](https://ms3-mario.herokuapp.com/)------[test results]()
-- Quiz page](https://ms3-mario.herokuapp.com/login/)-----[test results]()
-- [Quiz page, user logged](https://ms3-mario.herokuapp.com/quiz/)-----[test results]()
+HTML:
+- [Home page](https://ms3-mario.herokuapp.com/)------[test results](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/home_page_html_validation.JPG)
+- [Quiz page](https://ms3-mario.herokuapp.com/login/)-----[test results](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/quiz_page_html.JPG)
+- [Quiz page, user logged](https://ms3-mario.herokuapp.com/quiz/)-----[test results](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/quiz_page_html_user.JPG)
 - [Register page](https://ms3-mario.herokuapp.com/register/)-----[test results(https://ms3-mario.herokuapp.com/register/)]
-- [Login page](https://ms3-mario.herokuapp.com/login/)
-- [Settings page, user logged](https://ms3-mario.herokuapp.com/settings/)-----[test results]()
-- [Admin page, admin logged](https://ms3-mario.herokuapp.com/admin/)-----[test results]()
+- [Login page](https://ms3-mario.herokuapp.com/login/)-----test results[https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/login_page_html.JPG]
+- [Settings page, user logged](https://ms3-mario.herokuapp.com/settings/)-----[test results](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/settings_page_html.JPG)
+- [Admin page, admin logged](https://ms3-mario.herokuapp.com/admin/)-----[test results](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/admin_page_html.JPG)
 
-
+Python:
 
