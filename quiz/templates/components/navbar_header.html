@@ -15,28 +15,29 @@
                     </li>
                 </ul>
 
-                <ul class="navbar-nav col-auto mb-2 mb-sm-0 pull-right">
+                <div class="pull-right">
                     {% if not g.user %}
                         <a class="btn btn-outline-light me-2" href="/login/" role="button">Login</a>
                         <a class="btn btn-outline-light me-2" href="/register/" role="button">Register</a>
                     {% endif %}
-                    
-                    {% if g.user %}
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="user-icon"><i class="fas fa-user-circle"></i></span>{{g.user.username}}
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                                <li><a class="dropdown-item" href="/settings/">Settings</a></li>
-                                {% if g.user.is_admin %}
-                                    <li><a class="dropdown-item" href="/admin/">Admin</a></li>
-                                {% endif %}
-                                <li><a class="dropdown-item" href="/logout/">Logout</a></li>
-                            </ul>
-                        </li>
-                    {% endif %}
-                    
-                </ul>
+                    <ul class="navbar-nav col-auto mb-2 mb-sm-0 pull-right">
+                        {% if g.user %}
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="user-icon"><i class="fas fa-user-circle"></i></span>{{g.user.username}}
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdown03">
+                                    <li><a class="dropdown-item" href="/settings/">Settings</a></li>
+                                    {% if g.user.is_admin %}
+                                        <li><a class="dropdown-item" href="/admin/">Admin</a></li>
+                                    {% endif %}
+                                    <li><a class="dropdown-item" href="/logout/">Logout</a></li>
+                                </ul>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+                
             </div>
         </div>
     </nav>
