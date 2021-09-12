@@ -18,6 +18,8 @@ This site allows users to play short general knowledge quiz and to track their s
 
 - Quiz page contains quiz for play after user / admin has been logged in
 
+- Settings page for changing user details and passwords 
+
 - Admin page, only accessible  for Admin
 
 
@@ -84,8 +86,63 @@ This site allows users to play short general knowledge quiz and to track their s
 
 - [Register page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/register_page_image.JPG)
 
+[- Settings page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/settings_page_image.JPG)
+
+### Technology Used:
+
+ - HTML5
+ - CSS3
+ - [Bootstarp5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+ - [Python](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/requirements.txt)
+ - 
+
+ ### Tools Used:
+
+ - Visual code studio
+ - Git pod
+ - Github for repository hosting service
+ - [Heroku](https://dashboard.heroku.com/apps) to deploy web application
+ - [MongoDB](https://www.mongodb.com/cloud/atlas/lp/try2-de?utm_content=rlsapostreg&utm_source=google&utm_campaign=gs_emea_rlsamulti_search_brand_dsa_atlas_desktop_rlsa_postreg&utm_term=&utm_medium=cpc_paid_search&utm_ad=b&utm_ad_campaign_id=14412646473&gclid=EAIaIQobChMItZq0nt358gIVDpftCh3FhQRAEAAYASAAEgKGnfD_BwE) for database
+ - [PEP8](http://pep8online.com/) online for validation of Python code 
+ - [W3C](https://validator.w3.org/) for HTML validation
+ - [Jigsaw](https://jigsaw.w3.org/css-validator/) foR CSS validation
+
 
 ### Testing
 
 Throughout the development of the project, I carried out testing. I used the Chrome Developer Tools consistently.
 The application structure and mobile-first layout was tested on Google Chrome, Firefox and Safari.
+The application was tested on the following smartphone devices: iPhone11, Google Pixel 3, Galaxy S7
+
+#### Testing examples:
+
+Google Chrome:
+
+- [Home page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/chrome%20desktop/home_page_chrome.JPG)
+- [Login page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/chrome%20desktop/login_page_chrome.JPG)
+- [Register page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/chrome%20desktop/register_page_chrome.JPG)
+- [Quiz page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/chrome%20desktop/quiz_page_chrome.JPG)
+- [Settings page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/chrome%20desktop/settings_page_chrome.JPG)
+- [Admin page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/chrome%20desktop/admin_page_chrome.JPG)
+
+Firefox:
+
+- [Home page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/firefox%20desktop/home_page_firefox.JPG)
+- [Login page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/firefox%20desktop/login_page_firefox.JPG)
+- [Register page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/firefox%20desktop/register_page_firefox.JPG)
+- [Quiz page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/firefox%20desktop/quiz_page_firefox.JPG)
+- [Settings page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/firefox%20desktop/settings_page_firefox.JPG)
+- [Admin page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/firefox%20desktop/admin_page_firefox.JPG)
+
+Safari / mobile phone
+
+- [Home page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/safari_mobile/home_page_mobile.PNG)
+- [Login page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/safari_mobile/login_page_mobile.PNG)
+- [Register page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/safari_mobile/register_page_mobile.PNG)
+- [Quiz page]()
+- [Settings page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/safari_mobile/settings_page_mobile.PNG)
+- [Admin page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/safari_mobile/admin_page_mobile.PNG)
+
+
+
+
