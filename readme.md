@@ -147,7 +147,11 @@ MongoDB:
 
 - Create data base
 
-- After registration of test users, change status of one user to [admin]()
+Deployment`s final steps:
+
+- After registration of test users, change status of one the user to [admin](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/deployment/admin_MongoDB.JPG)
+
+- Create quiz questions
 
 
 
