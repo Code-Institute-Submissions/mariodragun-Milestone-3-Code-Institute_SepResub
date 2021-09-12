@@ -15,10 +15,21 @@ def create_app(test_config=None):
         instance_relative_config=True,
     )
 
+    # get environment role - if there is no env role in env variables
+    # set it default to development role
+    ENV_ROLE = os.getenv("ENV_ROLE", "development")
+
+    # set debug default to True, and if ENV_ROLE is production switch it
+    # to false
+    DEBUG = True
+    if ENV_ROLE == "production":
+        DEBUG = False
+
     # add basic configurations from env variables
     app.config.from_mapping(
         SECRET_KEY=os.getenv("SECRET_KEY"),
         MONGODB_HOST=os.getenv("MONGODB_HOST"),
+        DEBUG=DEBUG,
     )
 
     # ensure that instance folder exists
