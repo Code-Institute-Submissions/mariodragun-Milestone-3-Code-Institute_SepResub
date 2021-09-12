@@ -112,6 +112,9 @@ This site allows users to play short general knowledge quiz and to track their s
  ### Deployment:
 
 #### Project setup:
+
+Github:
+
 - Create a new repository on Git Hub using code institute`s template
 
 - Change repository visibility
@@ -123,6 +126,28 @@ This site allows users to play short general knowledge quiz and to track their s
 - Make regular commits after project change with quality description using commands: git add -A and git commit -m "message"
 
 - Use git push command in CMD for code commits
+
+
+Heroku:
+
+- Navigate to [Heroku](https://id.heroku.com/login)
+
+- Register account 
+
+- Press Button New
+
+- Select Create a New App, enter the app name and select region
+
+- Press Resource and connect with database
+
+MongoDB:
+- Navigate to [MongoDB](https://account.mongodb.com/account/login?signedOut=true)
+
+- Create account 
+
+- Create data base
+
+- After registration of test users, change status of one user to [admin]()
 
 
 
@@ -168,8 +193,8 @@ HTML:
 - [Home page](https://ms3-mario.herokuapp.com/)------[test results](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/home_page_html_validation.JPG)
 - [Quiz page](https://ms3-mario.herokuapp.com/login/)-----[test results](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/quiz_page_html.JPG)
 - [Quiz page, user logged](https://ms3-mario.herokuapp.com/quiz/)-----[test results](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/quiz_page_html_user.JPG)
-- [Register page](https://ms3-mario.herokuapp.com/register/)-----[test results(https://ms3-mario.herokuapp.com/register/)]
-- [Login page](https://ms3-mario.herokuapp.com/login/)-----test results[https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/login_page_html.JPG]
+- [Register page](https://ms3-mario.herokuapp.com/register/)-----[test results](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/register_page_html.JPG)]
+- [Login page](https://ms3-mario.herokuapp.com/login/)-----[test results][https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/login_page_html.JPG]
 - [Settings page, user logged](https://ms3-mario.herokuapp.com/settings/)-----[test results](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/settings_page_html.JPG)
 - [Admin page, admin logged](https://ms3-mario.herokuapp.com/admin/)-----[test results](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/admin_page_html.JPG)
 
