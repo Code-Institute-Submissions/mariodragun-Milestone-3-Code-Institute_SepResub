@@ -83,3 +83,9 @@ This site allows users to play short general knowledge quiz and to track their s
 - [Quiz page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/quiz_page_image.JPG)
 
 - [Register page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/register_page_image.JPG)
+
+
+### Testing
+
+Throughout the development of the project, I carried out testing. I used the Chrome Developer Tools consistently.
+The application structure and mobile-first layout was tested on Google Chrome, Firefox and Safari.
