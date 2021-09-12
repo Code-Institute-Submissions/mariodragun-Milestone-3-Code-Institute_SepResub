@@ -1,4 +1,4 @@
-# Ouiz -  Milestone project 3 Code Institute
+# Quiz -  Milestone project 3 Code Institute
 
 
 
