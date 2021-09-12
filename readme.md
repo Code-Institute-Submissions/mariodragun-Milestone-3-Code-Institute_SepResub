@@ -69,12 +69,40 @@ This site allows users to play short general knowledge quiz and to track their s
 
 - I used Roboto from, from Google Fonts
 
-#### Color:
+#### Colors:
 
- - Navigation bar color [#333](https://htmlcolors.com/hex/333)
- - Primary background color [#F5F5F5](https://www.color-hex.com/color/f5f5f5)
- - Navigation bar links []
- - 
+Navbar:
+- navbar-dark bg-dark (for the nav): #212529
+
+Quiz:
+Completed:
+- <i> tag (icon): #9ABC66
+- card box shadows (on questions overview and completed): #DEDEDE
+
+Accounts:
+Login/Register:
+- on card box shadow: #DEDEDE
+- card button: rgb(104, 145, 162)
+
+
+Bootstrap colors in use:
+Navbar:
+- on login and register: btn-outline-light me-2 class is used
+
+403 Error page:
+- Go Back button (btn-danger class) #dc3545
+
+Alert messages (flash messages):
+- alert-danger #842029
+- alert-success #0f5132
+
+Quiz questions:
+- Submit button (btn-primary class) #0d6efd
+
+Quiz overview:
+- Start new quiz button (btn-secondary class) #5c636
+- Continue button (btn-secondar classy) #5c636
+ 
 
 #### Design
 
@@ -93,20 +121,31 @@ This site allows users to play short general knowledge quiz and to track their s
 ### Technology Used:
 
  - HTML5
+
  - CSS3
+
  - [Bootstarp5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+
  - [Python](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/requirements.txt)
- - 
+
+ 
 
  ### Tools Used:
 
  - Visual code studio
+
  - Git pod
+
  - Github for repository hosting service
+
  - [Heroku](https://dashboard.heroku.com/apps) to deploy web application
+
  - [MongoDB](https://www.mongodb.com/cloud/atlas/lp/try2-de?utm_content=rlsapostreg&utm_source=google&utm_campaign=gs_emea_rlsamulti_search_brand_dsa_atlas_desktop_rlsa_postreg&utm_term=&utm_medium=cpc_paid_search&utm_ad=b&utm_ad_campaign_id=14412646473&gclid=EAIaIQobChMItZq0nt358gIVDpftCh3FhQRAEAAYASAAEgKGnfD_BwE) for database
+
  - [PEP8](http://pep8online.com/) online for validation of Python code 
+
  - [W3C](https://validator.w3.org/) for HTML validation
+
  - [Jigsaw](https://jigsaw.w3.org/css-validator/) foR CSS validation
 
  ### Deployment:
@@ -183,6 +222,12 @@ The application was tested on the following smartphone devices: iPhone11, Google
 - That admin can delete and  add users
 
 - That admin can delete, add and modify questions
+
+- If someone write \admin\ in URL gets [error message]()
+
+- That user can continue unfinshed quizes
+
+- That finsihed quizes is  inaccessible
 
 
 
