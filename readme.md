@@ -41,7 +41,7 @@ This site allows users to play short general knowledge quiz and to track their s
 
  - As a user I would like to track my previous score
 
-### Structure and design: 
+## Structure and design: 
 
 ### Wireframes:
 
@@ -60,3 +60,16 @@ This site allows users to play short general knowledge quiz and to track their s
 - [Admin page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/wireframes/admin%20page%20wireframe.JPG)
 
 - [Admin page mobile](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/wireframes/admin%20page%20mobile%20wireframe.JPG)
+
+### Design and colors:
+
+#### Fonts:
+
+- I used Roboto from, from Google Fonts
+
+#### Color:
+
+ - Navigation bar color [#333](https://htmlcolors.com/hex/333)
+ - Primary background color [#F5F5F5](https://www.color-hex.com/color/f5f5f5)
+ - Navigation abr link []
+ - 
