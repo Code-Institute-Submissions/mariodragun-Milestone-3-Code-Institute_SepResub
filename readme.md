@@ -86,7 +86,9 @@ This site allows users to play short general knowledge quiz and to track their s
 
 - [Register page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/register_page_image.JPG)
 
-[- Settings page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/settings_page_image.JPG)
+- [Settings page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/settings_page_image.JPG)
+
+- [Admin page]()
 
 ### Technology Used:
 
@@ -106,6 +108,23 @@ This site allows users to play short general knowledge quiz and to track their s
  - [PEP8](http://pep8online.com/) online for validation of Python code 
  - [W3C](https://validator.w3.org/) for HTML validation
  - [Jigsaw](https://jigsaw.w3.org/css-validator/) foR CSS validation
+
+ ### Deployment:
+
+#### Project setup:
+- Create a new repository on Git Hub using code institute`s template
+
+- Change repository visibility
+
+- Press green button to open project in git pod
+
+- Create readme.md file and make initial commit
+
+- Make regular commits after project change with quality description using commands: git add -A and git commit -m "message"
+
+- Use git push command in CMD for code commits
+
+
 
 
 ### Testing
