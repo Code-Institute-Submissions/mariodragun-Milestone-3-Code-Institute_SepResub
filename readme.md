@@ -4,7 +4,7 @@
 
 ## Summary:
 
-The purpose of the project is to build a full-stack site where users can play the quiz, tracked their scores and admin can easily modify data base, add new questions, delete old ones and to delete users.
+The purpose of the project is to build a site where users can play the quiz, tracked their scores and that admin can easily modify data base, add new questions, delete old ones and to delete users.
 
 This site allows users to play short general knowledge quiz and to track their scores.
 
@@ -43,7 +43,7 @@ This site allows users to play short general knowledge quiz and to track their s
 
  - As a user I would like to track my previous score
 
-## Structure and design: 
+## Structure:
 
 ### Wireframes:
 
@@ -63,13 +63,17 @@ This site allows users to play short general knowledge quiz and to track their s
 
 - [Admin page mobile](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/wireframes/admin%20page%20mobile%20wireframe.JPG)
 
-### Design and colors:
+## Design and colors:
 
-#### Fonts:
+### Fonts:
 
 - I used Roboto from, from Google Fonts
 
-#### Colors:
+### Images:
+
+- Welcome image downloaded from [WallpaperAccess](https://wallpaperaccess.com/)
+
+### Colors:
 
 Navbar:
 - navbar-dark bg-dark (for the nav): #212529
@@ -104,7 +108,7 @@ Quiz overview:
 - Continue button (btn-secondar classy) #5c636
  
 
-#### Design
+### Design
 
 - [Home Page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/home_page_image.JPG)
 
@@ -118,7 +122,7 @@ Quiz overview:
 
 - [Admin page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/admin_page_image.JPG)
 
-### Technology Used:
+## Technology Used:
 
  - HTML5
 
@@ -130,7 +134,7 @@ Quiz overview:
 
  
 
- ### Tools Used:
+ ## Tools Used:
 
  - Visual code studio
 
@@ -148,9 +152,9 @@ Quiz overview:
 
  - [Jigsaw](https://jigsaw.w3.org/css-validator/) foR CSS validation
 
- ### Deployment:
+ ## Deployment:
 
-#### Project setup:
+### Project setup:
 
 Github:
 
@@ -166,6 +170,13 @@ Github:
 
 - Use git push command in CMD for code commits
 
+MongoDB:
+
+- Navigate to [MongoDB](https://account.mongodb.com/account/login?signedOut=true)
+
+- Create account 
+
+- Create data base
 
 Heroku:
 
@@ -179,13 +190,6 @@ Heroku:
 
 - Press Resource and connect with database
 
-MongoDB:
-
-- Navigate to [MongoDB](https://account.mongodb.com/account/login?signedOut=true)
-
-- Create account 
-
-- Create data base
 
 Deployment`s final steps:
 
@@ -196,13 +200,13 @@ Deployment`s final steps:
 
 
 
-### Testing
+## Testing
 
 Throughout the development of the project, I carried out testing. I used the Chrome Developer Tools consistently.
 The application structure and mobile-first layout was tested on Google Chrome, Firefox and Safari.
-The application was tested on the following smartphone devices: iPhone11, Google Pixel 3, Galaxy S7
+The application was tested on the following smartphone devices: iPhone11, Google Pixel 3, 
 
-#### Functional testing:
+### Functional testing:
 
 - That all of the links are open wihout any problems
 
@@ -218,17 +222,17 @@ The application was tested on the following smartphone devices: iPhone11, Google
 
 - That user name and password length must be between 10 and 150 characters 
 
-- That e mail must be in valid form
+- That e-mail must be in valid form
 
-- That admin can delete and  add users
+- That admin can delete users
 
 - That admin can delete, add and modify questions
 
-- If someone write \admin\ in URL gets [error message]()
+- If someone write \admin\ in URL gets [error message](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/error_link.JPG)
 
 - That user can continue unfinshed quizzes
 
-- That finished quizzes is  inaccessible
+- That finished quizzes is  inaccessible for players
 
 
 
@@ -261,7 +265,7 @@ Safari / mobile phone:
 - [Settings page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/safari_mobile/settings_page_mobile.PNG)
 - [Admin page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/safari_mobile/admin_page_mobile.PNG)
 
-###Validator tests:
+### Validation tests:
 
 HTML:
 - [Home page](https://ms3-mario.herokuapp.com/)------[test results](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/html%20validator/home_page_html_validation.JPG)
@@ -307,3 +311,7 @@ CSS:
 - [CSS/quiz/accounts/auth](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/quiz/static/css/accounts/auth.css)-----[test result](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/css/auth_css_jigsaw.JPG)
 
 - [CSS/quiz/accounts/settings](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/quiz/static/css/accounts/settings.css)-----[test result](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/validator/css/setting_css_jigsaw.JPG)
+
+
+## Conclusion:
+This project was built only for educational purpose and won`t be in commercial use
