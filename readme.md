@@ -88,7 +88,7 @@ This site allows users to play short general knowledge quiz and to track their s
 
 - [Settings page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/settings_page_image.JPG)
 
-- [Admin page]()
+- [Admin page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/admin_page_image.JPG)
 
 ### Technology Used:
 
@@ -158,10 +158,19 @@ Safari / mobile phone
 - [Home page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/safari_mobile/home_page_mobile.PNG)
 - [Login page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/safari_mobile/login_page_mobile.PNG)
 - [Register page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/safari_mobile/register_page_mobile.PNG)
-- [Quiz page]()
+- [Quiz page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/safari_mobile/quiz_page_%20mobile.jpg)
 - [Settings page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/safari_mobile/settings_page_mobile.PNG)
 - [Admin page](https://github.com/mariodragun/Milestone-3-Code-Institute/blob/master/images/test%20images/safari_mobile/admin_page_mobile.PNG)
 
+Validator test
+
+[Home page](https://ms3-mario.herokuapp.com/)------[test results]()
+[Quiz page](https://ms3-mario.herokuapp.com/login/)-----[test results]()
+[Quiz page, user logged](https://ms3-mario.herokuapp.com/quiz/)-----[test results]()
+[Register page](https://ms3-mario.herokuapp.com/register/)-----[test results(https://ms3-mario.herokuapp.com/register/)]
+[Login page](https://ms3-mario.herokuapp.com/login/)
+[Settings page, user logged](https://ms3-mario.herokuapp.com/settings/)-----[test results]()
+[Admin page, admin logged](https://ms3-mario.herokuapp.com/admin/)-----[test results]()
 
 
 
