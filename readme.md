@@ -225,6 +225,8 @@ The application was tested on the following smartphone devices: iPhone11, Google
 
 - That e-mail must be in valid form
 
+- That users and admin can change passwords and other account settings
+
 - That admin can delete users
 
 - That admin can delete, add and modify questions
