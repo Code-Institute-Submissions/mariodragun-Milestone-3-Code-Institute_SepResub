@@ -16,12 +16,16 @@
                 <div class="card-body">
                     <h5 class="card-title">{{quiz.title}}</h5>
                     <h6 class="card-subtitle mb-2 text-muted"><b>Data Started:</b> {{quiz.date_started}}</h6>
-                    <h6 class="card-subtitle mb-2 text-muted"><b>Score:</b> {{quiz.date_started}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted"><b>Score:</b> {{quiz.overall_score}}</h6>
                     <h6 class="card-subtitle mb-2 text-muted"><b>Completed:</b> {{quiz.is_done}}</h6>
                     <p class="card-text">{{quiz.description}}</p>
                 </div>
                 <div class="d-grid d-md-block button-wrapper" style="padding: 10px;">
-                    <a class="btn btn-secondary" href="{{ url_for('quiz_start', quiz_id=quiz.id)}}">Continue</a>
+                    {% if quiz.is_done %}
+                        <a class="btn btn-secondary disabled" href="javascript:void(0)">Continue</a>
+                    {% else %}
+                        <a class="btn btn-secondary" href="{{ url_for('quiz_start', quiz_id=quiz.id)}}">Continue</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
