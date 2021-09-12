@@ -180,7 +180,11 @@ The application was tested on the following smartphone devices: iPhone11, Google
 
 - That e mail must be in valid form
 
-- 
+- That admin can delete and  add users
+
+- That admin can delete, add and modify questions
+
+
 
 #### Testing examples:
 
